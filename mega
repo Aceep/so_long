@@ -5,34 +5,34 @@ NC='\033[0m'
 
 make > /dev/null
 execution() {
-    ligne=1
-    if [ -f "again" ]; then
-        MAP=`sed -n ${ligne}p again`
-    else
-        MAP=0
-    fi
+	ligne=1
+	if [ -f "again" ]; then
+		MAP=`sed -n ${ligne}p again`
+	else
+		MAP=0
+	fi
 }
 i=0
 MAP=1
 echo -e "${BYELLOW}Welcome on So_long ! Are ready for a great adventure ?${NC}"
 while [ "$MAP" == "1" ]; do
-    let "i=i+1"
-    ./start/start
-    if [ -f "choice" ]; then
-        ./so_long
-        rm choice
-    fi
-    execution
-    if [ "$i" != "0" ]; then
-        if [ "$MAP" == "1" ]; then
-        echo "Let's play again !"
-        fi
-    fi
-    if [ -f "again" ]; then
-        rm again
-    fi
+	let "i=i+1"
+	./start/start
+	if [ -f "choice" ]; then
+		./so_long
+		rm choice
+	fi
+	execution
+	if [ "$i" != "0" ]; then
+		if [ "$MAP" == "1" ]; then
+			echo "Let's play again !"
+		fi
+	fi
+	if [ -f "again" ]; then
+		rm again
+	fi
 done
 if [ "$i" != "0" ]; then
-    echo "You've played $i times."
+	echo "You've played $i times."
 fi
 echo "Bye, see you soon on SO_LONG !"

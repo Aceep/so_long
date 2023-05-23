@@ -29,7 +29,7 @@ void	move_up(t_game *game)
 		}
 		player->y -= 1;
 		if (game->map[player->y][player->x].value == 'E'
-			&& player->object == game->count.c)
+				&& player->object == game->count.c)
 			game->end = 1;
 		ennemy(game);
 	}
@@ -52,7 +52,7 @@ void	move_left(t_game *game)
 		}
 		player->x -= 1;
 		if (game->map[player->y][player->x].value == 'E'
-			&& player->object == game->count.c)
+				&& player->object == game->count.c)
 			game->end = 1;
 		player->img = game->img.character[game->choice + 4];
 		ennemy(game);
@@ -76,7 +76,7 @@ void	move_down(t_game *game)
 		}
 		player->y += 1;
 		if (game->map[player->y][player->x].value == 'E'
-			&& player->object == game->count.c)
+				&& player->object == game->count.c)
 			game->end = 1;
 		ennemy(game);
 	}
@@ -99,7 +99,7 @@ void	move_right(t_game *game)
 		}
 		player->x += 1;
 		if (game->map[player->y][player->x].value == 'E'
-			&& player->object == game->count.c)
+				&& player->object == game->count.c)
 			game->end = 1;
 		player->img = game->img.character[game->choice];
 		ennemy(game);

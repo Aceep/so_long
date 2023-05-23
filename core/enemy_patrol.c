@@ -17,14 +17,14 @@ int	enemy_move_right(t_game *game, t_player *current)
 {
 	static char  previous_value;
 	void	*previous_img;
-	
+
 	previous_img = game->map[current->y][current->x + 1].img;
 	previous_value = game->map[current->y][current->x + 1].value;
 	if (current->x + 1 == game->player.x && current->y == game->player.y)
 		game->end = 2;
 	current->x += 1;
 	if (game->map[current->y][current->x + 1].value == '1')
-			current->dir = 1;
+		current->dir = 1;
 	return (0);
 }
 
@@ -33,14 +33,14 @@ int	enemy_move_left(t_game *game, t_player *current)
 {
 	static char  previous_value;
 	void	*previous_img;
-	
+
 	previous_img = game->map[current->y][current->x - 1].img;
 	previous_value = game->map[current->y][current->x - 1].value;
 	if (current->x - 1 == game->player.x && current->y == game->player.y)
 		game->end = 2;
 	current->x -= 1;
 	if (game->map[current->y][current->x - 1].value == '1')
-			current->dir = 0;
+		current->dir = 0;
 	return (0);
 }
 
@@ -68,10 +68,10 @@ int	enemy_patrol(t_game *game)
 	while (current)	
 	{
 		if ((game->map[current->y][current->x + 1].value != '1'
-			&& game->map[current->y][current->x + 1].value != 'X') && current->dir == 0)
+					&& game->map[current->y][current->x + 1].value != 'X') && current->dir == 0)
 			enemy_move_right(game, current);
 		else if ((game->map[current->y][current->x - 1].value != '1'
-				&& game->map[current->y][current->x - 1].value != 'X') && current->dir == 1)
+					&& game->map[current->y][current->x - 1].value != 'X') && current->dir == 1)
 			enemy_move_left(game, current);
 		check_oppo(current, game);
 		current = current->next;

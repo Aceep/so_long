@@ -30,10 +30,10 @@ void	end_screen(t_game *game)
 				(game->width * IMG_W)/2 - IMG_W, game->height * IMG_H / 2 - 96);
 		if (game->end == 1)
 			mlx_put_image_to_window(game->ptr, game->win, game->img.end[5],
-				(game->width * IMG_W)/2 - IMG_W, game->height * IMG_H / 4 * 3);
+					(game->width * IMG_W)/2 - IMG_W, game->height * IMG_H / 4 * 3);
 		if (game->end == 2)
 			mlx_put_image_to_window(game->ptr, game->win, game->img.end[6],
-				(game->width * IMG_W)/2 - IMG_W, game->height * IMG_H / 4 * 3);
+					(game->width * IMG_W)/2 - IMG_W, game->height * IMG_H / 4 * 3);
 	}
 	else if (x < game->width)
 	{
@@ -41,7 +41,7 @@ void	end_screen(t_game *game)
 		display_map(game);
 	}
 	mlx_string_put(game->ptr, game->win, (game->width * IMG_W) / 2 - 60,
-		IMG_H * game->height - 2, 16711680, "Press ESC to quit");
+			IMG_H * game->height - 2, 16711680, "Press ESC to quit");
 }
 
 int	exit_game(t_game *game)

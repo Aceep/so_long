@@ -32,7 +32,7 @@ void	anime_ennemy(t_game *game, int x, int y)
 	static int	j;
 
 	mlx_put_image_to_window(game->ptr, game->win, game->img.ennemy[fno],
-		IMG_W * x, IMG_H * y);
+			IMG_W * x, IMG_H * y);
 	if (i >= game->count.x && j == 3 * game->count.x)
 	{
 		fno ++;

@@ -69,7 +69,7 @@ void	free_enemy_stack(t_player **enemy)
 		free(*enemy);
 		*enemy = tmp;
 	}
-	
+
 }
 
 void	free_game(t_game *game)

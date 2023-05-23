@@ -34,7 +34,7 @@ void	map_dim(t_game *game, char *file_map)
 	close(fd);
 	if (game->width >= 40 || game->height >= 22)
 		error_exit(E_OVER, game);
- 	game->end = START_SCREEN;
+	game->end = START_SCREEN;
 }
 
 t_map	**init_map(t_game *game)

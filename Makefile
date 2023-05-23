@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
+#    By: aceep <aceep@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 15:45:50 by alycgaut          #+#    #+#              #
-#    Updated: 2023/05/22 14:28:23 by alycgaut         ###   ########.fr        #
+#    Updated: 2023/05/23 20:14:35 by aceep            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ INCLUDES += -I $(INC_DIR)
 INCLUDES += -I $(MLX_DIR)
 
 #Headers
+HEARDERS += start.h
 HEARDERS += so_long.h
 vpath %.h $(INC_DIR)
 

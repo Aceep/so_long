@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-//extern int PATROL;
+
 void	print_map(t_game *game)
 {
 	int	i;

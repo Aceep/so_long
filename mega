@@ -1,0 +1,14 @@
+make > /dev/null
+# execution() {
+#     ligne=1
+#     MAP=`sed -n ${ligne}p choice`
+# }
+./start/start
+# echo okk
+# execution
+# if [ -n "$MAP" ]; then
+./so_long
+rm choice
+# else
+#     echo "\033[1;31mError :\nInvalid number of arguments\033[0m\nYou need to use this format : make play MAP=\"name_of_the_file_map\""
+# fi

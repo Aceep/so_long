@@ -65,6 +65,13 @@ int	key_hook(int key, t_game *game)
 		if (key == K_D || key == K_R)
 			move_right(game);
 	}
+	if (key == ENTER && (game->end == 1 || game->end == 2))
+	{
+		int fd = open("again", O_WRONLY | O_APPEND | O_CREAT, 0644);
+		ft_putstr_fd("1", fd);
+		close (fd);
+		exit_game(game);
+	}
 	// if (game->end == -1)
 	// {
 	// 	if (key == K_A || key == K_L)

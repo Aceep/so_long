@@ -87,11 +87,12 @@ int	exit_start(t_game *start)
     if (start->map_choice != NULL)
 	{
 		fd = open("choice", O_WRONLY | O_APPEND | O_CREAT, 0644);
-    	//ft_printf("%d", fd);
+    	//ft_printf("%s", start->map_choice);
     	choice = ft_itoa(start->cursor.action);
 		ft_putstr_fd("maps/", fd);
 		ft_putstr_fd(start->map_choice, fd);
    		ft_putstr_fd(choice, fd);
+		free(start->map_choice);
     	close (fd);
     	free(choice);
 	}
@@ -123,7 +124,11 @@ void    choose_map(t_game *start, int c, int key)
 	if (map)
 		mlx_string_put(start->ptr, start->win, 500 - 2 * 64, 150, 16711680, map);
 	if (key > 0)
-		start->map_choice = map;
+		start->map_choice = ft_strdup(map);
+	free(map);
+	while ((map = get_next_line(fd)))
+		free(map);
+	close (fd);
 }
 
 int	key_hook_start(int key, t_game *start)
@@ -157,7 +162,7 @@ int	key_hook_start(int key, t_game *start)
 		if (key == ENTER)
 		{
 			start->end = 0;
-			choose_map(start, 1, key);
+			choose_map(start, 0, key);
 		}
     }
     return (0);

@@ -47,10 +47,9 @@ void	end_screen(t_game *game)
 int	exit_game(t_game *game)
 {
 	if (game->player.object == game->count.c && game->map[game->player.y][game->player.x].value == 'E')
-	{
-		ft_printf("Win\n");
-
-	}
+		ft_printf("\033[1;32mWin\n\033[0m");
+	else
+		ft_printf("\033[1;31mLose\n\033[0m");
 	if (game)
 		free_game(game);
 	exit(1);

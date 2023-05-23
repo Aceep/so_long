@@ -1,14 +1,38 @@
+#!/bin/bash
+# Colors
+BYELLOW='\033[1;33m'
+NC='\033[0m'
+
 make > /dev/null
-# execution() {
-#     ligne=1
-#     MAP=`sed -n ${ligne}p choice`
-# }
-./start/start
-# echo okk
-# execution
-# if [ -n "$MAP" ]; then
-./so_long
-rm choice
-# else
-#     echo "\033[1;31mError :\nInvalid number of arguments\033[0m\nYou need to use this format : make play MAP=\"name_of_the_file_map\""
-# fi
+execution() {
+    ligne=1
+    if [ -f "again" ]; then
+        MAP=`sed -n ${ligne}p again`
+    else
+        MAP=0
+    fi
+}
+i=0
+MAP=1
+echo -e "${BYELLOW}Welcome on So_long ! Are ready for a great adventure ?${NC}"
+while [ "$MAP" == "1" ]; do
+    let "i=i+1"
+    ./start/start
+    if [ -f "choice" ]; then
+        ./so_long
+        rm choice
+    fi
+    execution
+    if [ "$i" != "0" ]; then
+        if [ "$MAP" == "1" ]; then
+        echo "Let's play again !"
+        fi
+    fi
+    if [ -f "again" ]; then
+        rm again
+    fi
+done
+if [ "$i" != "0" ]; then
+    echo "You've played $i times."
+fi
+echo "Bye, see you soon on SO_LONG !"

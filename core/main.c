@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:32:40 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/17 16:20:03 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/24 03:21:05 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,6 @@ void	print_map(t_game *game)
 	write(1, "\n", 1);
 }
 
-void	game_option_choice(t_game *game)
-{
-	ft_printf("Enemy patrol activation ?\n");
-	if (ft_strchr(get_next_line(0), '1') != NULL)
-		game->opt.patrol = 1;
-	else
-		game->opt.patrol = 0;
-}
-
 char *remove_backslashn(char *map)
 {
 	int	i;
@@ -62,25 +53,44 @@ char *remove_backslashn(char *map)
 	map[i] = '\0';
 	return (map);
 }
-int	main(int ac, char **av)
+
+int	choice_file(char *av)
 {
 	t_game	*game;
-	char	*map;
-
-	int fd = open("choice", O_RDONLY);
+	char *map;
+	int fd;
+	
+	fd = open("choice", O_RDONLY);
 	map = get_next_line(fd);
 	map = remove_backslashn(map);
 	if (map != NULL)
 	{
 		if (check_ber(map) != 1)
 			error_exit(E_EXT, 0);
-		game = create_game(map);
+		game = create_game(map, av);
 		while (map)
 		{	
 			free(map);
 			map = get_next_line(fd);
 		}
-		//game_option_choice(game);
+		play(game);
+		return (free_game(game), 0);
+	}	
+	else
+		return (error_exit(E_ARG, NULL), 1);
+}
+
+int	main(int ac, char **av)
+{
+	t_game	*game;
+
+	if (ac == 2 && av[1][0] == 'o')
+		choice_file(av[1]);
+	else if (ac == 2 && av[1][0] != 'o')
+	{
+		if (check_ber(av[1]) != 1)
+			error_exit(E_EXT, 0);
+		game = create_game(av[1], NULL);
 		play(game);
 		return (free_game(game), 0);
 	}	

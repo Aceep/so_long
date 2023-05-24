@@ -75,7 +75,7 @@ all : $(NAME)
 
 $(NAME): $(MLX) $(LIBFT) $(OBJS)
 	@$(CC) $^ $(LDFLAGS) $(MLX_FLAGS) $(INCLUDES) -o $@
-	@echo -n "$(BYELLOW)start is ready ! ->\n$(NC)"
+	@echo -n "$(BYELLOW)Start is ready ! ->\n$(NC)"
 
 $(OBJS) : $(OBJS_DIR)/%.o: %.c | $(LIBFT) $(OBJS_DIR)
 	@$(CC) $(INCLUDES) -c $< -o $@

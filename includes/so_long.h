@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:47:02 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/23 20:15:55 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/24 03:01:13 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,7 @@ typedef struct s_game
 }t_game;
 
 //Create Map
-t_game		*create_game(char *file_map);
+t_game		*create_game(char *file_map, char *av);
 t_map		**init_map(t_game *game);
 void		put_map_value(t_game *game, char *file_map);
 void		map_dim(t_game *game, char *file_map);
@@ -199,6 +199,7 @@ int			path_check(t_game *game);
 //Error
 void		error_exit(int error_type, t_game *game);
 void	error_exit_charset(int error_type, t_game *game, char c);
+void	error_exit_count(int error_type, t_game *game, char *c);
 
 //Free
 void		free_map(t_map **map, int height);

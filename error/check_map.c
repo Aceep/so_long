@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:33:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/15 13:18:40 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/24 03:20:51 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,12 @@ int	map_error(t_game *game)
 		error = check_type(game);
 	if (!error)
 		error = path_check(game);
-	if (game->count.p != 1 || game->count.e != 1 || game->count.c < 1)
-		return (E_COUNT);
+	if ( game->count.p != 1 )
+		error_exit_count(E_COUNT, game, "No character or too much character");
+	if ( game->count.e != 1 )
+		error_exit_count(E_COUNT, game, "No exit or multiple exit");
+	if ( game->count.c < 1 )
+		error_exit_count(E_COUNT, game, "No collectible");
 	return (error);
 }
 
@@ -95,7 +99,7 @@ int	check_ber(char *av)
 	char	*ext;
 
 	ext = ft_strrchr(av, '.');
-	if (ext)
+	if (ext != NULL)
 		return (ft_strcmp(ext, ".ber\0") == 0);
-	return (1);
+	return (0);
 }

@@ -16,10 +16,10 @@ i=0
 MAP=1
 echo -e "${BYELLOW}Welcome on So_long ! Are ready for a great adventure ?${NC}"
 while [ "$MAP" == "1" ]; do
-	let "i=i+1"
 	./start/start
 	if [ -f "choice" ]; then
-		./so_long
+		./so_long "o"
+		let "i=i+1"
 		rm choice
 	fi
 	execution

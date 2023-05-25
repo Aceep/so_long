@@ -18,7 +18,7 @@ void	display_map(t_game *game)
 	int		y;
 	char	*nv;
 	t_player	*current;
-	
+
 	y = 0;
 	current = game->enemy;
 	while (y < game->height)
@@ -33,10 +33,10 @@ void	display_map(t_game *game)
 			}
 			else 
 				mlx_put_image_to_window(game->ptr, game->win, game->map[y][x].img,
-				IMG_W * x, IMG_H * y);
+						IMG_W * x, IMG_H * y);
 			if (y == game->player.y && x == game->player.x && game->end == 0)
 				mlx_put_image_to_window(game->ptr, game->win, game->player.img,
-					IMG_W * x, IMG_H * y);
+						IMG_W * x, IMG_H * y);
 			x ++;
 		}
 		y ++;
@@ -65,6 +65,13 @@ int	key_hook(int key, t_game *game)
 		if (key == K_D || key == K_R)
 			move_right(game);
 	}
+	if (key == ENTER && (game->end == 1 || game->end == 2))
+	{
+		int fd = open("again", O_WRONLY | O_APPEND | O_CREAT, 0644);
+		ft_putstr_fd("1", fd);
+		close (fd);
+		exit_game(game);
+	}
 	// if (game->end == -1)
 	// {
 	// 	if (key == K_A || key == K_L)
@@ -78,7 +85,7 @@ int	key_hook(int key, t_game *game)
 	// 		init_player(game);
 	// 	}
 	//}
-		//print_map(game);
+	//print_map(game);
 	return (0);
 }
 

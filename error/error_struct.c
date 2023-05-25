@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_struct.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:32:48 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/15 13:19:01 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/24 02:49:31 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,14 @@ void	error_exit(int error_type, t_game *game)
 void	error_exit_charset(int error_type, t_game *game, char c)
 {
 	ft_printf("\033[1;31m%s : %c\n\033[0m", errdesc[error_type].msg, c);
+	if (game)
+		free_game(game);
+	exit(1);
+}
+
+void	error_exit_count(int error_type, t_game *game, char *c)
+{
+	ft_printf("\033[1;31m%s : %s\n\033[0m", errdesc[error_type].msg, c);
 	if (game)
 		free_game(game);
 	exit(1);

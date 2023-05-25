@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:47:02 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/22 15:37:19 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/24 03:01:13 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # include "../libft/includes/get_next_line.h"
 # include "../libft/includes/ft_printf.h"
 # include "../mlx_linux/mlx.h"
+# include "start.h"
 
 # define ESC_K	65307
 # define ENTER	65293
@@ -179,7 +180,7 @@ typedef struct s_game
 }t_game;
 
 //Create Map
-t_game		*create_game(char *file_map);
+t_game		*create_game(char *file_map, char *av);
 t_map		**init_map(t_game *game);
 void		put_map_value(t_game *game, char *file_map);
 void		map_dim(t_game *game, char *file_map);
@@ -198,6 +199,7 @@ int			path_check(t_game *game);
 //Error
 void		error_exit(int error_type, t_game *game);
 void	error_exit_charset(int error_type, t_game *game, char c);
+void	error_exit_count(int error_type, t_game *game, char *c);
 
 //Free
 void		free_map(t_map **map, int height);

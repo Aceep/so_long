@@ -16,20 +16,20 @@ void	flood(t_map **map, t_map *player)
 {
 	map[player->y][player->x].acc = 1;
 	if (map[player->y][player->x + 1].value != '1'
-		&& map[player->y][player->x + 1].value != 'X'
-		&& map[player->y][player->x + 1].acc == 0)
+			&& map[player->y][player->x + 1].value != 'X'
+			&& map[player->y][player->x + 1].acc == 0)
 		flood(map, &map[player->y][player->x + 1]);
 	if (map[player->y + 1][player->x].value != '1'
-		&& map[player->y + 1][player->x].value != 'X'
-		&& map[player->y + 1][player->x].acc == 0)
+			&& map[player->y + 1][player->x].value != 'X'
+			&& map[player->y + 1][player->x].acc == 0)
 		flood(map, &map[player->y + 1][player->x]);
 	if (map[player->y][player->x - 1].value != '1'
-		&& map[player->y][player->x - 1].value != 'X'
-		&& map[player->y][player->x - 1].acc == 0)
+			&& map[player->y][player->x - 1].value != 'X'
+			&& map[player->y][player->x - 1].acc == 0)
 		flood(map, &map[player->y][player->x - 1]);
 	if (map[player->y - 1][player->x].value != '1'
-		&& map[player->y - 1][player->x].value != 'X'
-		&& map[player->y - 1][player->x].acc == 0)
+			&& map[player->y - 1][player->x].value != 'X'
+			&& map[player->y - 1][player->x].acc == 0)
 		flood(map, &map[player->y - 1][player->x]);
 }
 

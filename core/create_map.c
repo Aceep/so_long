@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:32:34 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/22 14:30:02 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/24 03:05:54 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	map_dim(t_game *game, char *file_map)
 	close(fd);
 	if (game->width >= 40 || game->height >= 22)
 		error_exit(E_OVER, game);
- 	game->end = START_SCREEN;
+	game->end = START_SCREEN;
 }
 
 t_map	**init_map(t_game *game)
@@ -91,6 +91,7 @@ void	put_map_value(t_game *game, char *file_map)
 	}
 	close(fd);
 }
+
 void	put_choice_value(t_game *game)
 {
 	char	*tmp;
@@ -103,7 +104,8 @@ void	put_choice_value(t_game *game)
 	game->choice = ft_atoi(tmp); 
 	free(tmp);
 }
-t_game	*create_game(char *file_map)
+
+t_game	*create_game(char *file_map, char *av)
 {
 	t_game	*game;
 
@@ -126,7 +128,10 @@ t_game	*create_game(char *file_map)
 	xpm_init(game);
 	generate_map(game);
 	ft_playerlist(game);
-	put_choice_value(game);
+	if (av[0] == 'o')
+		put_choice_value(game);
+	else
+		game->choice = 0;
 	init_player(game);
 	return (game);
 }

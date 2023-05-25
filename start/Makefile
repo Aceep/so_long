@@ -41,6 +41,7 @@ INCLUDES += -I $(MLX_DIR)
 
 #Headers
 HEARDERS += so_long.h
+HEARDERS += start.h
 vpath %.h $(INC_DIR)
 
 #Source Directories
@@ -52,6 +53,8 @@ SRCS += xpm_main.c
 SRCS += start_game.c
 SRCS += error_struct.c
 SRCS += free.c
+SRCS += play_start.c
+SRCS += choose_map.c
 
 #Vpath Source
 vpath %.c $(CORE_DIR)
@@ -72,7 +75,7 @@ all : $(NAME)
 
 $(NAME): $(MLX) $(LIBFT) $(OBJS)
 	@$(CC) $^ $(LDFLAGS) $(MLX_FLAGS) $(INCLUDES) -o $@
-	@echo -n "$(BYELLOW)start is ready ! ->\n$(NC)"
+	@echo -n "$(BYELLOW)Start is ready ! ->\n$(NC)"
 
 $(OBJS) : $(OBJS_DIR)/%.o: %.c | $(LIBFT) $(OBJS_DIR)
 	@$(CC) $(INCLUDES) -c $< -o $@

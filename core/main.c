@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:32:40 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/24 03:21:05 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/25 19:43:13 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	choice_file(char *av)
 	{
 		if (check_ber(map) != 1)
 			error_exit(E_EXT, 0);
-		game = create_game(map, av);
+		game = create_game(map, 0);
 		while (map)
 		{	
 			free(map);
@@ -86,11 +86,11 @@ int	main(int ac, char **av)
 
 	if (ac == 2 && av[1][0] == 'o')
 		choice_file(av[1]);
-	else if (ac == 2 && av[1][0] != 'o')
+	else if (ac == 2)
 	{
 		if (check_ber(av[1]) != 1)
 			error_exit(E_EXT, 0);
-		game = create_game(av[1], NULL);
+		game = create_game(av[1], 1);
 		play(game);
 		return (free_game(game), 0);
 	}	

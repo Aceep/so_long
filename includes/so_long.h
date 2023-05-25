@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:47:02 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/24 03:01:13 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/25 19:43:29 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,7 @@ typedef struct s_game
 }t_game;
 
 //Create Map
-t_game		*create_game(char *file_map, char *av);
+t_game		*create_game(char *file_map, int c);
 t_map		**init_map(t_game *game);
 void		put_map_value(t_game *game, char *file_map);
 void		map_dim(t_game *game, char *file_map);

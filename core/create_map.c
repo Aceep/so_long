@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:32:34 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/24 03:05:54 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/25 19:42:57 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void	put_choice_value(t_game *game)
 	free(tmp);
 }
 
-t_game	*create_game(char *file_map, char *av)
+t_game	*create_game(char *file_map, int c)
 {
 	t_game	*game;
 
@@ -128,7 +128,7 @@ t_game	*create_game(char *file_map, char *av)
 	xpm_init(game);
 	generate_map(game);
 	ft_playerlist(game);
-	if (av[0] == 'o')
+	if (c == 0)
 		put_choice_value(game);
 	else
 		game->choice = 0;

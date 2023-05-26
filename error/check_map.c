@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:33:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/26 16:49:10 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/26 21:04:33 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	check_type(t_game *game)
 		x = 0;
 		while (x < game->width)
 		{
-			if (!ft_ischarset(game->map[y][x].value, "10CEPXD"))
+			if (!ft_ischarset(game->map[y][x].value, "10CEPXF"))
 				error_exit_charset(E_TYPE, game, game->map[y][x].value);
 			if (game->map[y][x].value == 'P')
 				game->count.p ++;

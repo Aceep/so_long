@@ -36,3 +36,4 @@ if [ "$i" != "0" ]; then
 	echo "You've played $i times."
 fi
 echo "Bye, see you soon on SO_LONG !"
+make fclean > /dev/null

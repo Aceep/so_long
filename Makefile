@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aceep <aceep@student.42.fr>                +#+  +:+       +#+         #
+#    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 15:45:50 by alycgaut          #+#    #+#              #
-#    Updated: 2023/05/23 20:14:35 by aceep            ###   ########.fr        #
+#    Updated: 2023/05/26 16:50:54 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ SRCS += check_map.c
 SRCS += error_struct.c
 SRCS += create_map.c
 SRCS += free.c
+SRCS += free2.c
 SRCS += init_player.c
 SRCS += play.c
 SRCS += move.c
@@ -75,6 +76,7 @@ SRCS += xpm_main.c
 SRCS += check_path.c
 SRCS += enemy.c
 SRCS += enemy_patrol.c
+SRCS += generate_map.c
 
 #Vpath Source
 vpath %.c $(CORE_DIR)

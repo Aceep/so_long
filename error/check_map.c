@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:33:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/24 03:20:51 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/26 16:49:10 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,14 @@ int	map_error(t_game *game)
 		error = wall_check(game);
 	if (!error)
 		error = check_type(game);
+	if (game->count.p != 1)
+		error_exit_count(E_COUNT, game, "No character or too much character");
+	if (game->count.e != 1)
+		error_exit_count(E_COUNT, game, "No exit or multiple exit");
+	if (game->count.c < 1)
+		error_exit_count(E_COUNT, game, "No collectible");
 	if (!error)
 		error = path_check(game);
-	if ( game->count.p != 1 )
-		error_exit_count(E_COUNT, game, "No character or too much character");
-	if ( game->count.e != 1 )
-		error_exit_count(E_COUNT, game, "No exit or multiple exit");
-	if ( game->count.c < 1 )
-		error_exit_count(E_COUNT, game, "No collectible");
 	return (error);
 }
 

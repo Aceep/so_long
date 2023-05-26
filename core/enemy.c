@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:24:39 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/17 16:00:26 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:46:29 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ennemy(t_game *game)
 {
-	t_player *current;
+	t_player	*current;
 
 	current = game->enemy;
 	while (current)
 	{
-		if (game->player.y  == current->y && game->player.x == current->x)
+		if (game->player.y == current->y && game->player.x == current->x)
 			game->end = 2;
 		current = current->next;
 	}
@@ -32,7 +32,7 @@ void	anime_ennemy(t_game *game, int x, int y)
 	static int	j;
 
 	mlx_put_image_to_window(game->ptr, game->win, game->img.ennemy[fno],
-			IMG_W * x, IMG_H * y);
+		IMG_W * x, IMG_H * y);
 	if (i >= game->count.x && j == 3 * game->count.x)
 	{
 		fno ++;
@@ -56,8 +56,6 @@ void	ft_playerlist(t_game *game)
 		x = 0;
 		while (x < game->width)
 		{
-			//if (map[y][x] == 'P')
-			//	ft_plradd_back(&g->pl, ft_plrnew(ft_newvector(x, y)));
 			if (game->map[y][x].value == 'X')
 				ft_plradd_back(&game->enemy, init_enemy(game, x, y));
 			x++;

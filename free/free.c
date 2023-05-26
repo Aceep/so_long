@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:45:47 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/17 16:49:38 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:50:34 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	free_game_data(t_game *game)
 
 void	free_enemy_stack(t_player **enemy)
 {
-	t_player *tmp;
+	t_player	*tmp;
 
 	if (!enemy || !(*enemy))
 		return ;
@@ -69,15 +69,4 @@ void	free_enemy_stack(t_player **enemy)
 		free(*enemy);
 		*enemy = tmp;
 	}
-
-}
-
-void	free_game(t_game *game)
-{
-	if (!game)
-		return ;
-	free_game_data(game);
-	free_enemy_stack(&game->enemy);
-	free_map(game->map, game->height);
-	free(game);
 }

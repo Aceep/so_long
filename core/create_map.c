@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:32:34 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/25 19:42:57 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:39:23 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,19 +89,25 @@ void	put_map_value(t_game *game, char *file_map)
 		free(line);
 		y ++;
 	}
+	line = get_next_line(fd);
+	while (line)
+	{
+		line = get_next_line(fd);
+		free(line);
+	}
 	close(fd);
 }
 
 void	put_choice_value(t_game *game)
 {
 	char	*tmp;
-	int fd;
+	int		fd;
 
 	fd = open("choice", O_RDONLY);
 	tmp = get_next_line(fd);
 	free(tmp);
 	tmp = get_next_line(fd);
-	game->choice = ft_atoi(tmp); 
+	game->choice = ft_atoi(tmp);
 	free(tmp);
 }
 

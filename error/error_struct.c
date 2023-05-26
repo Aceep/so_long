@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_struct.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:32:48 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/24 02:49:31 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/26 16:49:26 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,3 @@ void	error_exit_count(int error_type, t_game *game, char *c)
 		free_game(game);
 	exit(1);
 }
-

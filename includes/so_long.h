@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:47:02 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/25 19:43:29 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:54:35 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 # define SO_LONG_H
 
 # ifndef PATROL
-#  define PATROL 1 // 1 = on / 0 = off
-#  define START_SCREEN -1 //-1 = on / 0 = off
-#  define ENEMY_SPEED 3000 //1000 = Extrem / 2000 = Hard / 3000 = Medium / 4000 = Easy
+#  define PATROL 1 
+// 1 = on / 0 = off
+#  define START_SCREEN -1 
+//-1 = on / 0 = off
+#  define ENEMY_SPEED 3000 
+//1000 = Extrem / 2000 = Hard / 3000 = Medium / 4000 = Easy
 # endif
 
 # include <stdlib.h>
@@ -58,7 +61,7 @@
 
 //Ingame Character
 # define DINO "graph/Ingame_Character/Yellow/Main-character-So_Long.xpm"
-# define DINO_LEFT "graph/Ingame_Character/Yellow/Main-character-So_Long_Left.xpm"
+# define DINO_LEFT "graph/Ingame_Character/Yellow/Main-character-So_Long.xpm"
 # define DINO_RED "graph/Ingame_Character/Red/Character_red.xpm"
 # define DINO_RED_LEFT "graph/Ingame_Character/Red/Character_red_left.xpm"
 # define DINO_GREEN "graph/Ingame_Character/Green/Character_green.xpm"
@@ -138,14 +141,14 @@ typedef struct s_image
 
 typedef struct s_player
 {
-	int			x;
-	int			y;
-	int			object;
-	int			action;
-	int			mv_count;
-	void		*img;
-	int			dir;
-	struct s_player *next;
+	int				x;
+	int				y;
+	int				object;
+	int				action;
+	int				mv_count;
+	void			*img;
+	int				dir;
+	struct s_player	*next;
 }t_player;
 
 typedef struct s_count
@@ -176,7 +179,7 @@ typedef struct s_game
 	t_option	opt;
 	t_player	cursor;
 	int			choice;
-	char	*map_choice;
+	char		*map_choice;
 }t_game;
 
 //Create Map
@@ -198,13 +201,15 @@ int			path_check(t_game *game);
 
 //Error
 void		error_exit(int error_type, t_game *game);
-void	error_exit_charset(int error_type, t_game *game, char c);
-void	error_exit_count(int error_type, t_game *game, char *c);
+void		error_exit_charset(int error_type, t_game *game, char c);
+void		error_exit_count(int error_type, t_game *game, char *c);
 
 //Free
 void		free_map(t_map **map, int height);
 void		free_game(t_game *game);
-void	free_enemy_stack(t_player **enemy);
+void		free_enemy_stack(t_player **enemy);
+void		free_game(t_game *game);
+void		free_game_data(t_game *game);
 
 //Play
 int			key_hook(int key, t_game *game);
@@ -221,7 +226,7 @@ int			exit_game(t_game *game);
 
 //Images
 void		xpm_init(t_game *game);
-void	xpm_preview(t_game *game);
+void		xpm_preview(t_game *game);
 
 //Map
 void		display_map(t_game *game);
@@ -236,10 +241,4 @@ void		ft_plradd_back(t_player **lst, t_player *newnode);
 t_player	*init_enemy(t_game *game, int x, int y);
 void		ft_playerlist(t_game *game);
 
-//Start Screen
-void		start_screen(t_game *start);
-void		cursor_init(t_game  *game);
-void    cursor_move_right(t_game *game);
-void    cursor_move_left(t_game *game);
-int    start_game(void);
 #endif 

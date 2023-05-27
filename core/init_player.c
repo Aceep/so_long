@@ -6,11 +6,19 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:33:03 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/10 14:41:44 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/27 14:37:18 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+void	charac_choice(int c, t_game *game)
+{
+	if (c == 0)
+		put_choice_value(game);
+	else
+		game->choice = 0;
+}
 
 t_map	*find(t_game *game, int c)
 {

@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:32:34 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/26 17:39:23 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/27 14:39:16 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,27 +67,18 @@ void	put_map_value(t_game *game, char *file_map)
 {
 	int		fd;
 	char	*line;
-	int		x;
 	int		y;
 
-	fd = open(file_map, O_RDONLY);
-	if (fd < 0)
-		error_exit(E_RD, game);
-	y = 0;
-	while (y < game->height)
+	fd = open_file(file_map, game);
+	y = -1;
+	while (++y < game->height)
 	{
 		line = get_next_line(fd);
 		check_rec(line, game);
 		if (!line)
 			error_exit(E_GNL, game);
-		x = 0;
-		while (x < game->width)
-		{
-			game->map[y][x].value = line[x];
-			game->map[y][x++].acc = 0;
-		}
+		assign_value(game, y, line);
 		free(line);
-		y ++;
 	}
 	line = get_next_line(fd);
 	while (line)
@@ -134,10 +125,7 @@ t_game	*create_game(char *file_map, int c)
 	xpm_init(game);
 	generate_map(game);
 	ft_playerlist(game);
-	if (c == 0)
-		put_choice_value(game);
-	else
-		game->choice = 0;
+	charac_choice(c, game);
 	init_player(game);
 	return (game);
 }

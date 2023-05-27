@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:47:02 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/26 16:54:35 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/27 14:39:56 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,6 +191,10 @@ void		map_dim(t_game *game, char *file_map);
 //Init Game
 void		init_player(t_game *game);
 t_map		*find(t_game *game, int c);
+void		charac_choice(int c, t_game *game);
+int			open_file(char *file_map, t_game *game);
+void		put_choice_value(t_game *game);
+void		assign_value(t_game *game, int y, char *line);
 
 //Check_Map
 int			check_ber(char *av);

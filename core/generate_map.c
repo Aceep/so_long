@@ -6,11 +6,33 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:43:54 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/26 16:47:58 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/27 14:39:36 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+void	assign_value(t_game *game, int y, char *line)
+{
+	int	x;
+
+	x = 0;
+	while (x < game->width)
+	{
+		game->map[y][x].value = line[x];
+		game->map[y][x++].acc = 0;
+	}
+}
+
+int	open_file(char *file_map, t_game *game)
+{
+	int	fd;
+
+	fd = open(file_map, O_RDONLY);
+	if (fd < 0)
+		error_exit(E_RD, game);
+	return (fd);
+}
 
 void	wall_map(t_game *game)
 {

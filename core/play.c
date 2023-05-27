@@ -6,25 +6,34 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:32:54 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/26 16:29:55 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/27 14:32:36 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
+void	print_move(t_game *game)
+{
+	char		*nv;
+
+	nv = ft_itoa(game->player.mv_count);
+	if (game->end == 0)
+		mlx_string_put(game->ptr, game->win, 10, 20, 0x00FF0000, nv);
+	free(nv);
+}
+
 void	display_map(t_game *game)
 {
 	int			x;
 	int			y;
-	char		*nv;
 	t_player	*current;
 
-	y = 0;
+	y = -1;
 	current = game->enemy;
-	while (y < game->height)
+	while (++y < game->height)
 	{
-		x = 0;
-		while (x < game->width)
+		x = -1;
+		while (++x < game->width)
 		{
 			if (current && y == current->y && x == current->x)
 			{
@@ -37,14 +46,9 @@ void	display_map(t_game *game)
 			if (y == game->player.y && x == game->player.x && game->end == 0)
 				mlx_put_image_to_window(game->ptr, game->win, game->player.img,
 					IMG_W * x, IMG_H * y);
-			x ++;
 		}
-		y ++;
 	}
-	nv = ft_itoa(game->player.mv_count);
-	if (game->end == 0)
-		mlx_string_put(game->ptr, game->win, 10, 20, 0x00FF0000, nv);
-	free(nv);
+	print_move(game);
 }
 
 int	key_hook(int key, t_game *game)

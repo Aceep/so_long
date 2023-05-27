@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:56:15 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/26 17:02:02 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/27 19:56:23 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	start_game(void)
 	start->ptr = mlx_init();
 	if (!start->ptr)
 		error_exit(E_MLX, start);
-	start->win = mlx_new_window(start->ptr, 1000, 500, "So_long");
+	start->win = mlx_new_window(start->ptr, 800, 500, "So_long");
 	if (!start->win)
 		error_exit(E_MLX, start);
 	start->end = -2;
@@ -55,5 +55,6 @@ int	start_game(void)
 
 int	main(void)
 {
+	start_screen();
 	start_game();
 }

@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:59:08 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/26 17:01:26 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/27 19:52:06 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ void	start_screen(t_game *start)
 
 	x = 0;
 	mlx_put_image_to_window(start->ptr, start->win,
-		start->img.preview[4], 500 - 2 * 64, 150);
+		start->img.preview[4], 800 / 2 - 2 * IMG_W, 150);
 	mlx_put_image_to_window(start->ptr, start->win,
-		start->img.preview[0], 500 - 2 * 64, 200);
+		start->img.preview[0], 800 / 2 - 2 * IMG_W, 200);
 	mlx_put_image_to_window(start->ptr, start->win,
-		start->img.preview[1], 500 - 1 * 64, 200);
+		start->img.preview[1], 800 / 2 - IMG_W, 200);
 	mlx_put_image_to_window(start->ptr, start->win,
-		start->img.preview[2], 500, 200);
+		start->img.preview[2], 800 / 2, 200);
 	mlx_put_image_to_window(start->ptr, start->win,
-		start->img.preview[3], 564, 200);
+		start->img.preview[3], 800 / 2 + IMG_W, 200);
 	while (x < 20)
 	{
 		mlx_put_image_to_window(start->ptr, start->win,
@@ -39,7 +39,7 @@ void	start_screen(t_game *start)
 
 void	cursor_move_left(t_game *game)
 {
-	if (game->cursor.x > 500 - 2 * 64)
+	if (game->cursor.x > 800 / 2 - 2 * IMG_W)
 	{
 		game->cursor.x -= IMG_W;
 		game->cursor.action -= 1;
@@ -48,7 +48,7 @@ void	cursor_move_left(t_game *game)
 
 void	cursor_move_right(t_game *game)
 {
-	if (game->cursor.x < 564)
+	if (game->cursor.x < 800 / 2 + IMG_W)
 	{
 		game->cursor.x += IMG_W;
 		game->cursor.action += 1;
@@ -57,7 +57,7 @@ void	cursor_move_right(t_game *game)
 
 void	cursor_init(t_game *game)
 {
-	game->cursor.x = 500 - 2 * 64;
+	game->cursor.x = 800 / 2 - 2 * IMG_W;
 	game->cursor.y = 280;
 	game->cursor.action = 0;
 }

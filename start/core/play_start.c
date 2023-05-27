@@ -6,11 +6,30 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:58:04 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/26 16:58:05 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/27 14:46:35 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
+
+void	key_choose_map(t_game *start, int key)
+{
+	if (key == K_W || key == K_U)
+	{
+		mlx_clear_window(start->ptr, start->win);
+		choose_map(start, -1, 0);
+	}
+	if (key == K_S || key == K_DO)
+	{
+		mlx_clear_window(start->ptr, start->win);
+		choose_map(start, 1, 0);
+	}
+	if (key == ENTER)
+	{
+		start->end = 0;
+		choose_map(start, 0, key);
+	}
+}
 
 int	key_hook_start(int key, t_game *start)
 {
@@ -29,23 +48,7 @@ int	key_hook_start(int key, t_game *start)
 		}
 	}
 	else if (start->end == -1)
-	{
-		if (key == K_W || key == K_U)
-		{
-			mlx_clear_window(start->ptr, start->win);
-			choose_map(start, -1, 0);
-		}
-		if (key == K_S || key == K_DO)
-		{
-			mlx_clear_window(start->ptr, start->win);
-			choose_map(start, 1, 0);
-		}
-		if (key == ENTER)
-		{
-			start->end = 0;
-			choose_map(start, 0, key);
-		}
-	}
+		key_choose_map(start, key);
 	return (0);
 }
 

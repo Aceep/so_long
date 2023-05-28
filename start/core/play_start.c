@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   play_start.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:58:04 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/27 14:46:35 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/28 02:57:17 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,13 @@ int	key_hook_start(int key, t_game *start)
 
 int	loop_hook_start(t_game *start)
 {
-	if (start->end == -2)
+	static int i;
+
+	if (i != 1500)
+		return (0);
+	else if (start->end == -3)
+		opening_door(start);
+	else if (start->end == -2)
 		start_screen(start);
 	else if (start->end == -1)
 		choose_map(start, 0, 0);

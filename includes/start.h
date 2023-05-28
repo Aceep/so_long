@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:52:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/26 16:55:47 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/28 02:54:18 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,53 @@
 
 # include "so_long.h"
 
+# define D_1 "graph/Jurassic_Doors/frame-1.xpm"
+# define D_2 "graph/Jurassic_Doors/frame-2.xpm"
+# define D_3 "graph/Jurassic_Doors/frame-3.xpm"
+# define D_4 "graph/Jurassic_Doors/frame-4.xpm"
+# define D_5 "graph/Jurassic_Doors/frame-5.xpm"
+# define D_6 "graph/Jurassic_Doors/frame-6.xpm"
+# define D_7 "graph/Jurassic_Doors/frame-7.xpm"
+# define D_8 "graph/Jurassic_Doors/frame-8.xpm"
+# define D_9 "graph/Jurassic_Doors/frame-9.xpm"
+# define D_10 "graph/Jurassic_Doors/frame-10.xpm"
+# define D_11 "graph/Jurassic_Doors/frame-11.xpm"
+# define D_12 "graph/Jurassic_Doors/frame-12.xpm"
+# define D_13 "graph/Jurassic_Doors/frame-13.xpm"
+# define D_14 "graph/Jurassic_Doors/frame-14.xpm"
+# define D_15 "graph/Jurassic_Doors/frame-15.xpm"
+# define D_16 "graph/Jurassic_Doors/frame-16.xpm"
+# define D_17 "graph/Jurassic_Doors/frame-17.xpm"
+# define D_18 "graph/Jurassic_Doors/frame-18.xpm"
+# define D_19 "graph/Jurassic_Doors/frame-19.xpm"
+# define D_20 "graph/Jurassic_Doors/frame-20.xpm"
+# define D_21 "graph/Jurassic_Doors/frame-21.xpm"
+# define D_22 "graph/Jurassic_Doors/frame-22.xpm"
+# define D_23 "graph/Jurassic_Doors/frame-23.xpm"
+# define D_24 "graph/Jurassic_Doors/frame-24.xpm"
+# define D_25 "graph/Jurassic_Doors/frame-25.xpm"
+# define D_26 "graph/Jurassic_Doors/frame-26.xpm"
+# define D_27 "graph/Jurassic_Doors/frame-27.xpm"
+# define D_28 "graph/Jurassic_Doors/frame-28.xpm"
+# define D_29 "graph/Jurassic_Doors/frame-29.xpm"
+# define D_30 "graph/Jurassic_Doors/frame-30.xpm"
+# define D_31 "graph/Jurassic_Doors/frame-31.xpm"
+# define D_32 "graph/Jurassic_Doors/frame-32.xpm"
+# define D_33 "graph/Jurassic_Doors/frame-33.xpm"
+# define D_34 "graph/Jurassic_Doors/frame-34.xpm"
+# define D_35 "graph/Jurassic_Doors/frame-35.xpm"
+# define D_36 "graph/Jurassic_Doors/frame-36.xpm"
+# define D_37 "graph/Jurassic_Doors/frame-37.xpm"
+# define D_38 "graph/Jurassic_Doors/frame-38.xpm"
+# define D_39 "graph/Jurassic_Doors/frame-39.xpm"
+# define D_40 "graph/Jurassic_Doors/frame-40.xpm"
+# define D_41 "graph/Jurassic_Doors/frame-41.xpm"
+
 typedef struct s_game	t_game;
 
 //Starter
-int		start_game(void);
+int		start_game(t_game *start);
+void    opening_door(t_game *start);
 
 //Character choice
 void	cursor_init(t_game *game);
@@ -42,5 +85,8 @@ void	free_game_data_start(t_game *start);
 void	destroy_image_v2s(void *mlx_ptr, void *img);
 void	destroy_imagess(t_game *data);
 void	free_game(t_game *game);
+
+//Images
+void	all_xpm_for_start(t_game *game);
 
 #endif

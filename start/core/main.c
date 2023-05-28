@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:56:15 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/27 19:56:23 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/28 02:50:53 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,8 @@ int	exit_start(t_game *start)
 	exit(1);
 }
 
-int	start_game(void)
+int	start_game(t_game *start)
 {
-	t_game	*start;
 	int		ret;
 
 	start = ft_calloc(1, sizeof(t_game));
@@ -45,9 +44,9 @@ int	start_game(void)
 	start->win = mlx_new_window(start->ptr, 800, 500, "So_long");
 	if (!start->win)
 		error_exit(E_MLX, start);
-	start->end = -2;
+	start->end = -3;
 	cursor_init(start);
-	xpm_preview(start);
+	all_xpm_for_start(start);
 	play_start(start);
 	ret = start->cursor.action;
 	return (ret);
@@ -55,6 +54,9 @@ int	start_game(void)
 
 int	main(void)
 {
-	start_screen();
-	start_game();
+	t_game	*start;
+
+	start = ft_calloc(1, sizeof(t_game));
+	start_game(start);
+	start_screen(start);
 }

@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:52:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/28 02:54:18 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/28 09:25:52 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 # include "so_long.h"
 
-# define D_1 "graph/Jurassic_Doors/frame-1.xpm"
-# define D_2 "graph/Jurassic_Doors/frame-2.xpm"
-# define D_3 "graph/Jurassic_Doors/frame-3.xpm"
-# define D_4 "graph/Jurassic_Doors/frame-4.xpm"
-# define D_5 "graph/Jurassic_Doors/frame-5.xpm"
-# define D_6 "graph/Jurassic_Doors/frame-6.xpm"
-# define D_7 "graph/Jurassic_Doors/frame-7.xpm"
-# define D_8 "graph/Jurassic_Doors/frame-8.xpm"
-# define D_9 "graph/Jurassic_Doors/frame-9.xpm"
+# define D_1 "graph/Jurassic_Doors/frame-01.xpm"
+# define D_2 "graph/Jurassic_Doors/frame-02.xpm"
+# define D_3 "graph/Jurassic_Doors/frame-03.xpm"
+# define D_4 "graph/Jurassic_Doors/frame-04.xpm"
+# define D_5 "graph/Jurassic_Doors/frame-05.xpm"
+# define D_6 "graph/Jurassic_Doors/frame-06.xpm"
+# define D_7 "graph/Jurassic_Doors/frame-07.xpm"
+# define D_8 "graph/Jurassic_Doors/frame-08.xpm"
+# define D_9 "graph/Jurassic_Doors/frame-09.xpm"
 # define D_10 "graph/Jurassic_Doors/frame-10.xpm"
 # define D_11 "graph/Jurassic_Doors/frame-11.xpm"
 # define D_12 "graph/Jurassic_Doors/frame-12.xpm"

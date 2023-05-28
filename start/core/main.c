@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:56:15 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/28 02:50:53 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/28 09:22:57 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int	main(void)
 	t_game	*start;
 
 	start = ft_calloc(1, sizeof(t_game));
-	start_game(start);
-	start_screen(start);
+	all_xpm_for_start(start);
+	opening_door(start);
+	// start_game(start);
+	// start_screen(start);
 }

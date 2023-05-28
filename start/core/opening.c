@@ -6,7 +6,8 @@ void    opening_door(t_game *start)
     int x;
     int y;
 
-    mlx_put_image_to_window(start->ptr, start->win, start->img.door[fno],
+    mlx_put_image_to_window(start->ptr, start->win, start->img.door[0],
 		600, 800);
     fno ++;
+
 }

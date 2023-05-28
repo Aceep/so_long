@@ -41,7 +41,7 @@ int	start_game(t_game *start)
 	start->ptr = mlx_init();
 	if (!start->ptr)
 		error_exit(E_MLX, start);
-	start->win = mlx_new_window(start->ptr, 800, 500, "So_long");
+	start->win = mlx_new_window(start->ptr, 498, 338, "So_long");
 	if (!start->win)
 		error_exit(E_MLX, start);
 	start->end = -3;
@@ -56,9 +56,7 @@ int	main(void)
 {
 	t_game	*start;
 
-	start = ft_calloc(1, sizeof(t_game));
-	all_xpm_for_start(start);
-	opening_door(start);
-	// start_game(start);
-	// start_screen(start);
+	start = malloc(sizeof(t_game));
+	start_game(start);
+	start_screen(start);
 }

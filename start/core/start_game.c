@@ -18,15 +18,15 @@ void	start_screen(t_game *start)
 
 	x = 0;
 	mlx_put_image_to_window(start->ptr, start->win,
-		start->img.preview[4], 800 / 2 - 2 * IMG_W, 150);
+		start->img.preview[4], 498 / 2 - 2 * IMG_W, 70);
 	mlx_put_image_to_window(start->ptr, start->win,
-		start->img.preview[0], 800 / 2 - 2 * IMG_W, 200);
+		start->img.preview[0], 498 / 2 - 2 * IMG_W, 120);
 	mlx_put_image_to_window(start->ptr, start->win,
-		start->img.preview[1], 800 / 2 - IMG_W, 200);
+		start->img.preview[1], 498 / 2 - IMG_W, 120);
 	mlx_put_image_to_window(start->ptr, start->win,
-		start->img.preview[2], 800 / 2, 200);
+		start->img.preview[2], 498 / 2, 120);
 	mlx_put_image_to_window(start->ptr, start->win,
-		start->img.preview[3], 800 / 2 + IMG_W, 200);
+		start->img.preview[3], 498 / 2 + IMG_W, 120);
 	while (x < 20)
 	{
 		mlx_put_image_to_window(start->ptr, start->win,
@@ -39,7 +39,7 @@ void	start_screen(t_game *start)
 
 void	cursor_move_left(t_game *game)
 {
-	if (game->cursor.x > 800 / 2 - 2 * IMG_W)
+	if (game->cursor.x > 498 / 2 - 2 * IMG_W)
 	{
 		game->cursor.x -= IMG_W;
 		game->cursor.action -= 1;
@@ -48,7 +48,7 @@ void	cursor_move_left(t_game *game)
 
 void	cursor_move_right(t_game *game)
 {
-	if (game->cursor.x < 800 / 2 + IMG_W)
+	if (game->cursor.x < 498 / 2 + IMG_W)
 	{
 		game->cursor.x += IMG_W;
 		game->cursor.action += 1;
@@ -57,7 +57,7 @@ void	cursor_move_right(t_game *game)
 
 void	cursor_init(t_game *game)
 {
-	game->cursor.x = 800 / 2 - 2 * IMG_W;
-	game->cursor.y = 280;
+	game->cursor.x = 498 / 2 - 2 * IMG_W;
+	game->cursor.y = 200;
 	game->cursor.action = 0;
 }

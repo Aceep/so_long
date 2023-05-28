@@ -12,7 +12,7 @@
 
 #include "../../includes/so_long.h"
 
-void	key_choose_map(t_game *start, int key)
+int	key_choose_map(t_game *start, int key)
 {
 	if (key == K_W || key == K_U)
 	{
@@ -29,6 +29,7 @@ void	key_choose_map(t_game *start, int key)
 		start->end = 0;
 		choose_map(start, 0, key);
 	}
+	return (0);
 }
 
 int	key_hook_start(int key, t_game *start)
@@ -56,16 +57,17 @@ int	loop_hook_start(t_game *start)
 {
 	static int i;
 
-	if (i != 1500)
-		return (0);
-	else if (start->end == -3)
+	if (++i != 150)
+	 	return (0);
+	if (start->end == -3)
 		opening_door(start);
-	else if (start->end == -2)
+	if (start->end == -2)
 		start_screen(start);
-	else if (start->end == -1)
+	if (start->end == -1)
 		choose_map(start, 0, 0);
-	else
+	if (start->end == 0)
 		exit_start(start);
+	i = 0;
 	return (0);
 }
 

@@ -19,10 +19,11 @@ char	*find_right_line(int fd, int i, char *map)
 	x = 0;
 	while (x < i)
 	{
-		free(map);
 		map = get_next_line(fd);
+		free(map);
 		x ++;
 	}
+	map = get_next_line(fd);
 	return (map);
 }
 
@@ -38,17 +39,17 @@ void	choose_map(t_game *start, int c, int key)
 	else if (i < 0)
 		i = 0;
 	fd = open("maps/list_map", O_RDONLY);
-	map = get_next_line(fd);
-	find_right_line(fd, i, map);
+	map = find_right_line(fd, i, map);
 	if (map)
 		mlx_string_put(start->ptr, start->win,
-			500 - 2 * 64, 150, 16711680, map);
-	if (key > 0)
-		start->map_choice = ft_strdup(map);
+			498 - 2 * 64, 150, 16711680, map);
+	if (key == ENTER)
+		{start->map_choice = ft_strdup(map);}
 	while (map)
 	{
 		free(map);
 		map = get_next_line(fd);
 	}
 	close (fd);
+	
 }

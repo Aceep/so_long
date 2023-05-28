@@ -95,7 +95,7 @@
 # define INSTRUCT_START "graph/Preview_Character/Start_instructions.xpm"
 # define S_BLACK "graph/Preview_Character/black.xpm"
 
-# define IMG_NB 32
+# define IMG_NB 73
 
 typedef enum e_config_error
 {
@@ -137,7 +137,7 @@ typedef struct s_image
 	void	*ennemy[6];
 	void	*cursor;
 	void	*preview[6];
-	void	*door[2];
+	void	*door[41];
 }t_image;
 
 typedef struct s_player

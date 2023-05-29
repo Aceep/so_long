@@ -34,6 +34,7 @@ void	free_game(t_game *game)
 {
 	if (!game)
 		return ;
+	free_dico(&game->dico);
 	free_game_data_start(game);
 	free(game);
 }
@@ -50,5 +51,19 @@ void	free_game_data_start(t_game *start)
 		}
 		mlx_destroy_display(start->ptr);
 		free(start->ptr);
+	}
+}
+
+void	free_dico(t_letter **dico)
+{
+	t_letter	*tmp;
+
+	if (!dico || !(*dico))
+		return ;
+	while (*dico)
+	{
+		tmp = (*dico)->next;
+		free(*dico);
+		*dico = tmp;
 	}
 }

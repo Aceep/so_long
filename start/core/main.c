@@ -18,6 +18,7 @@ int	exit_start(t_game *start)
 	char	*choice;
 
 	free_game_data_start(start);
+	free_dico(&start->dico);
 	if (start->map_choice != NULL)
 	{
 		fd = open("choice", O_WRONLY | O_APPEND | O_CREAT, 0644);
@@ -37,7 +38,6 @@ int	start_game(t_game *start,char *again)
 {
 	int		ret;
 
-	start = ft_calloc(1, sizeof(t_game));
 	start->ptr = mlx_init();
 	if (!start->ptr)
 		error_exit(E_MLX, start);
@@ -61,7 +61,8 @@ int	main(int ac, char **av)
 
 	if (ac == 2)
 	{
-		create_dico();
+		start = ft_calloc(1, sizeof(t_game));
+		create_dico(start);
 		start_game(start, av[1]);
 		start_screen(start);
 	}

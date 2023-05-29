@@ -62,13 +62,13 @@ typedef struct s_game	t_game;
 typedef struct s_letter
 {
     int		idx;
-    char	letter;
+    char	*letter;
     char	*file;
 	struct s_letter	*next;
 }t_letter;
 
 //Dico
-int    create_dico(void);
+int    create_dico(t_game *start);
 
 //Starter
 int		start_game(t_game *start, char  *again);
@@ -96,6 +96,7 @@ void	free_game_data_start(t_game *start);
 void	destroy_image_v2s(void *mlx_ptr, void *img);
 void	destroy_imagess(t_game *data);
 void	free_game(t_game *game);
+void	free_dico(t_letter **dico);
 
 //Images
 void	all_xpm_for_start(t_game *game);

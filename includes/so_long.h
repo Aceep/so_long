@@ -181,6 +181,7 @@ typedef struct s_game
 	t_player	cursor;
 	int			choice;
 	char		*map_choice;
+	t_letter	*dico;
 }t_game;
 
 //Create Map
@@ -246,4 +247,6 @@ void		ft_plradd_back(t_player **lst, t_player *newnode);
 t_player	*init_enemy(t_game *game, int x, int y);
 void		ft_playerlist(t_game *game);
 
+//Bonus
+char		*remove_backslashn(char *map);
 #endif 

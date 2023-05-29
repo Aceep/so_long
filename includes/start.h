@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:52:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/29 11:19:16 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/29 14:27:55 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,17 @@
 # define D_41 "graph/Jurassic_Doors/frame-41.xpm"
 
 typedef struct s_game	t_game;
+
+typedef struct s_letter
+{
+    int		idx;
+    char	letter;
+    char	*file;
+	struct s_letter	*next;
+}t_letter;
+
+//Dico
+int    create_dico(void);
 
 //Starter
 int		start_game(t_game *start, char  *again);

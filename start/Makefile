@@ -56,6 +56,7 @@ SRCS += free.c
 SRCS += play_start.c
 SRCS += choose_map.c
 SRCS += opening.c
+SRCS += create_dico.c
 
 #Vpath Source
 vpath %.c $(CORE_DIR)

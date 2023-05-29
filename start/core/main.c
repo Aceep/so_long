@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:56:15 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/29 11:32:00 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/29 14:27:32 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int	main(int ac, char **av)
 
 	if (ac == 2)
 	{
+		create_dico();
 		start_game(start, av[1]);
 		start_screen(start);
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   choose_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:56:39 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/27 17:03:08 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/29 11:32:49 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	choose_map(t_game *start, int c, int key)
 	map = find_right_line(fd, i, map);
 	if (map)
 		mlx_string_put(start->ptr, start->win,
-			498 - 2 * 64, 150, 16711680, map);
+			498 / 2, 150, 16711680, map);
 	if (key == ENTER)
 		{start->map_choice = ft_strdup(map);}
 	while (map)

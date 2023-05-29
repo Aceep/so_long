@@ -8,7 +8,7 @@ void    opening_door(t_game *start)
   int y;
 
   mlx_put_image_to_window(start->ptr, start->win, start->img.door[fno], 0, 0);
-  // if ((slw % 4) == 0)
+  if ((slw % 4) == 0)
     fno ++;
   slw ++;
   if (fno == 41)

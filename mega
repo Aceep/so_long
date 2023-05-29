@@ -16,7 +16,10 @@ i=0
 MAP=1
 echo -e "${BYELLOW}Welcome on So_long ! Are ready for a great adventure ?${NC}"
 while [ "$MAP" == "1" ]; do
-	./start/start
+	./start/start $i
+	if [ -f "again" ]; then
+		rm again
+	fi
 	if [ -f "choice" ]; then
 		./so_long "o"
 		let "i=i+1"
@@ -27,9 +30,6 @@ while [ "$MAP" == "1" ]; do
 		if [ "$MAP" == "1" ]; then
 			echo "Let's play again !"
 		fi
-	fi
-	if [ -f "again" ]; then
-		rm again
 	fi
 done
 if [ "$i" != "0" ]; then

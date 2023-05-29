@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:52:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/28 09:25:52 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/29 11:19:16 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@
 typedef struct s_game	t_game;
 
 //Starter
-int		start_game(t_game *start);
+int		start_game(t_game *start, char  *again);
 void    opening_door(t_game *start);
 
 //Character choice

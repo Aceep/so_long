@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:56:15 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/28 09:22:57 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/29 11:32:00 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	exit_start(t_game *start)
 	exit(1);
 }
 
-int	start_game(t_game *start)
+int	start_game(t_game *start,char *again)
 {
 	int		ret;
 
@@ -44,7 +44,10 @@ int	start_game(t_game *start)
 	start->win = mlx_new_window(start->ptr, 498, 338, "So_long");
 	if (!start->win)
 		error_exit(E_MLX, start);
-	start->end = -3;
+	if (ft_atoi(again) == 0)
+		start->end = -3;
+	else
+		start->end = -2;
 	cursor_init(start);
 	all_xpm_for_start(start);
 	play_start(start);
@@ -52,11 +55,14 @@ int	start_game(t_game *start)
 	return (ret);
 }
 
-int	main(void)
+int	main(int ac, char **av)
 {
 	t_game	*start;
 
-	start = malloc(sizeof(t_game));
-	start_game(start);
-	start_screen(start);
+	if (ac == 2)
+	{
+		start_game(start, av[1]);
+		start_screen(start);
+	}
+	return (0);
 }

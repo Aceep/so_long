@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:56:39 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/29 11:32:49 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/29 23:44:34 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,4 @@ void	choose_map(t_game *start, int c, int key)
 		map = get_next_line(fd);
 	}
 	close (fd);
-	
 }

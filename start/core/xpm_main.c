@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 17:49:45 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/28 09:31:12 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/30 00:06:01 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,43 @@ void	xpm_doors_1(t_game *start)
 	start->img.door[39] = mlx_xpm_file_to_image(start->ptr, D_40, &w, &h);
 	start->img.door[40] = mlx_xpm_file_to_image(start->ptr, D_41, &w, &h);
 }
+
+void	xpm_alphabet(t_game *start)
+{
+	int	w;
+	int	h;
+
+	start->img.alphabet[0] = mlx_xpm_file_to_image(start->ptr, A, &w, &h);
+	start->img.alphabet[1] = mlx_xpm_file_to_image(start->ptr, B, &w, &h);
+	start->img.alphabet[2] = mlx_xpm_file_to_image(start->ptr, C, &w, &h);
+	start->img.alphabet[3] = mlx_xpm_file_to_image(start->ptr, D, &w, &h);
+	start->img.alphabet[4] = mlx_xpm_file_to_image(start->ptr, E, &w, &h);
+	start->img.alphabet[5] = mlx_xpm_file_to_image(start->ptr, F, &w, &h);
+	start->img.alphabet[6] = mlx_xpm_file_to_image(start->ptr, G, &w, &h);
+	start->img.alphabet[7] = mlx_xpm_file_to_image(start->ptr, H, &w, &h);
+	start->img.alphabet[8] = mlx_xpm_file_to_image(start->ptr, I, &w, &h);
+	start->img.alphabet[9] = mlx_xpm_file_to_image(start->ptr, J, &w, &h);
+	start->img.alphabet[10] = mlx_xpm_file_to_image(start->ptr, K, &w, &h);
+	start->img.alphabet[11] = mlx_xpm_file_to_image(start->ptr, L, &w, &h);
+	start->img.alphabet[12] = mlx_xpm_file_to_image(start->ptr, M, &w, &h);
+	start->img.alphabet[13] = mlx_xpm_file_to_image(start->ptr, N, &w, &h);
+	start->img.alphabet[14] = mlx_xpm_file_to_image(start->ptr, O, &w, &h);
+	start->img.alphabet[15] = mlx_xpm_file_to_image(start->ptr, P, &w, &h);
+	start->img.alphabet[16] = mlx_xpm_file_to_image(start->ptr, Q, &w, &h);
+	start->img.alphabet[17] = mlx_xpm_file_to_image(start->ptr, R, &w, &h);
+	start->img.alphabet[18] = mlx_xpm_file_to_image(start->ptr, S, &w, &h);
+	start->img.alphabet[19] = mlx_xpm_file_to_image(start->ptr, T, &w, &h);
+	start->img.alphabet[20] = mlx_xpm_file_to_image(start->ptr, U, &w, &h);
+	start->img.alphabet[21] = mlx_xpm_file_to_image(start->ptr, V, &w, &h);
+	start->img.alphabet[22] = mlx_xpm_file_to_image(start->ptr, W, &w, &h);
+	start->img.alphabet[23] = mlx_xpm_file_to_image(start->ptr, X, &w, &h);
+	start->img.alphabet[24] = mlx_xpm_file_to_image(start->ptr, Y, &w, &h);
+	start->img.alphabet[25] = mlx_xpm_file_to_image(start->ptr, Z, &w, &h);
+}
 void	all_xpm_for_start(t_game *start)
 {
 	xpm_doors_1(start);
+	xpm_alphabet(start);
 	//xpm_doors_2(start);
 	xpm_preview(start);
 }

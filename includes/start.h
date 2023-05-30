@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:52:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/29 14:27:55 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/30 10:04:53 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,33 @@
 # define D_40 "graph/Jurassic_Doors/frame-40.xpm"
 # define D_41 "graph/Jurassic_Doors/frame-41.xpm"
 
+# define A "graph/Alphabet/a.xpm"
+# define B "graph/Alphabet/b.xpm"
+# define C "graph/Alphabet/c.xpm"
+# define D "graph/Alphabet/d.xpm"
+# define E "graph/Alphabet/e.xpm"
+# define F "graph/Alphabet/f.xpm"
+# define G "graph/Alphabet/g.xpm"
+# define H "graph/Alphabet/h.xpm"
+# define I "graph/Alphabet/i.xpm"
+# define J "graph/Alphabet/j.xpm"
+# define K "graph/Alphabet/k.xpm"
+# define L "graph/Alphabet/l.xpm"
+# define M "graph/Alphabet/m.xpm"
+# define N "graph/Alphabet/n.xpm"
+# define O "graph/Alphabet/o.xpm"
+# define P "graph/Alphabet/p.xpm"
+# define Q "graph/Alphabet/q.xpm"
+# define R "graph/Alphabet/r.xpm"
+# define S "graph/Alphabet/s.xpm"
+# define T "graph/Alphabet/t.xpm"
+# define U "graph/Alphabet/u.xpm"
+# define V "graph/Alphabet/v.xpm"
+# define W "graph/Alphabet/w.xpm"
+# define X "graph/Alphabet/x.xpm"
+# define Y "graph/Alphabet/y.xpm"
+# define Z "graph/Alphabet/z.xpm"
+
 typedef struct s_game	t_game;
 
 typedef struct s_letter
@@ -72,7 +99,8 @@ int    create_dico(t_game *start);
 
 //Starter
 int		start_game(t_game *start, char  *again);
-void    opening_door(t_game *start);
+int    opening_door(t_game *start);
+int    put_message(char *msg, t_game *start);
 
 //Character choice
 void	cursor_init(t_game *game);

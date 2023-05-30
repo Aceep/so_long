@@ -95,7 +95,7 @@
 # define INSTRUCT_START "graph/Preview_Character/Start_instructions.xpm"
 # define S_BLACK "graph/Preview_Character/black.xpm"
 
-# define IMG_NB 73
+# define IMG_NB 100
 
 typedef enum e_config_error
 {

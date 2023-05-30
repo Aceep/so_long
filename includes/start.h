@@ -84,6 +84,7 @@
 # define Y "graph/Alphabet/y.xpm"
 # define Z "graph/Alphabet/z.xpm"
 
+
 typedef struct s_game	t_game;
 
 typedef struct s_letter

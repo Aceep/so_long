@@ -63,7 +63,7 @@ int	loop_hook_start(t_game *start)
 	if (start->end == -3 && end == 0)
 		end = opening_door(start);
 	else if (start->end == -3 && end == 1)
-		put_message("wel", start);
+		put_message("welcome to solong", start);
 	if (start->end == -2)
 		start_screen(start);
 	if (start->end == -1)

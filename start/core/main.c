@@ -17,8 +17,6 @@ int	exit_start(t_game *start)
 	int		fd;
 	char	*choice;
 
-	free_game_data_start(start);
-	free_dico(&start->dico);
 	if (start->map_choice != NULL)
 	{
 		fd = open("choice", O_WRONLY | O_APPEND | O_CREAT, 0644);
@@ -30,7 +28,7 @@ int	exit_start(t_game *start)
 		close (fd);
 		free(choice);
 	}
-	free(start);
+	free_game(start);
 	exit(1);
 }
 

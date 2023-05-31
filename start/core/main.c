@@ -32,7 +32,7 @@ int	exit_start(t_game *start)
 	exit(1);
 }
 
-int	start_game(t_game *start,char *again)
+int	start_game(t_game *start, char *again)
 {
 	int		ret;
 

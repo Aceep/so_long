@@ -53,6 +53,8 @@
 # define IMG_W 64
 # define IMG_H 64
 
+extern size_t	choice;
+
 //Environnement
 # define BRICK "graph/BRICK_1A.xpm"
 # define GRASS "graph/DIRT_1A.xpm"
@@ -95,7 +97,7 @@
 # define INSTRUCT_START "graph/Preview_Character/Start_instructions.xpm"
 # define S_BLACK "graph/Preview_Character/black.xpm"
 
-# define IMG_NB 100
+# define IMG_NB 72
 
 typedef enum e_config_error
 {
@@ -139,6 +141,7 @@ typedef struct s_image
 	void	*preview[6];
 	void	*door[41];
 	void	*alphabet[26];
+	void	*background[34];
 }t_image;
 
 typedef struct s_player
@@ -250,4 +253,6 @@ void		ft_playerlist(t_game *game);
 
 //Bonus
 char		*remove_backslashn(char *map);
+void		put_again(char *ag);
+
 #endif 

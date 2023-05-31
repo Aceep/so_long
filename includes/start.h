@@ -84,24 +84,60 @@
 # define Y "graph/Alphabet/y.xpm"
 # define Z "graph/Alphabet/z.xpm"
 
+# define B1 "graph/Background/frame-01.xpm"
+# define B2 "graph/Background/frame-01.xpm"
+# define B3 "graph/Background/frame-01.xpm"
+# define B4 "graph/Background/frame-01.xpm"
+# define B5 "graph/Background/frame-01.xpm"
+# define B6 "graph/Background/frame-01.xpm"
+# define B7 "graph/Background/frame-01.xpm"
+# define B8 "graph/Background/frame-01.xpm"
+# define B9 "graph/Background/frame-01.xpm"
+# define B10 "graph/Background/frame-01.xpm"
+# define B11 "graph/Background/frame-01.xpm"
+# define B12 "graph/Background/frame-01.xpm"
+# define B13 "graph/Background/frame-01.xpm"
+# define B14 "graph/Background/frame-01.xpm"
+# define B15 "graph/Background/frame-01.xpm"
+# define B16 "graph/Background/frame-01.xpm"
+# define B17 "graph/Background/frame-01.xpm"
+# define B18 "graph/Background/frame-01.xpm"
+# define B19 "graph/Background/frame-01.xpm"
+# define B20 "graph/Background/frame-01.xpm"
+# define B21 "graph/Background/frame-01.xpm"
+# define B22 "graph/Background/frame-01.xpm"
+# define B23 "graph/Background/frame-01.xpm"
+# define B24 "graph/Background/frame-01.xpm"
+# define B25 "graph/Background/frame-01.xpm"
+# define B26 "graph/Background/frame-01.xpm"
+# define B27 "graph/Background/frame-01.xpm"
+# define B28 "graph/Background/frame-01.xpm"
+# define B29 "graph/Background/frame-01.xpm"
+# define B30 "graph/Background/frame-01.xpm"
+# define B31 "graph/Background/frame-01.xpm"
+# define B32 "graph/Background/frame-01.xpm"
+# define B33 "graph/Background/frame-01.xpm"
+# define B34 "graph/Background/frame-01.xpm"
+
+# define IMG_NB_START 101
 
 typedef struct s_game	t_game;
 
 typedef struct s_letter
 {
-    int		idx;
-    char	*letter;
-    char	*file;
+	int				idx;
+	char			*letter;
+	char			*file;
 	struct s_letter	*next;
 }t_letter;
 
 //Dico
-int    create_dico(t_game *start);
+int		create_dico(t_game *start);
 
 //Starter
-int		start_game(t_game *start, char  *again);
-int    opening_door(t_game *start);
-int    put_message(char *msg, t_game *start);
+int		start_game(t_game *start, char *again);
+int		opening_door(t_game *start);
+int		put_message(char *msg, t_game *start);
 
 //Character choice
 void	cursor_init(t_game *game);
@@ -129,5 +165,9 @@ void	free_dico(t_letter **dico);
 
 //Images
 void	all_xpm_for_start(t_game *game);
+void	xpm_alphabet2(t_game *start);
+void	xpm_background1(t_game *start);
+void	xpm_background2(t_game *start);
+void	put_background(t_game *start);
 
 #endif

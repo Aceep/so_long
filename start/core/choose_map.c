@@ -12,6 +12,19 @@
 
 #include "../../includes/so_long.h"
 
+void	put_background(t_game *start)
+{
+	static int fno;
+	static int	slw;
+
+	mlx_put_image_to_window(start->ptr, start->win, start->img.background[0], 0, 0);
+	if ((slw % 5) == 0)
+		fno ++;
+	slw ++;
+	if (fno == 33)
+		fno = 0;
+}
+
 char	*find_right_line(int fd, int i, char *map)
 {
 	int			x;
@@ -40,11 +53,13 @@ void	choose_map(t_game *start, int c, int key)
 		i = 0;
 	fd = open("maps/list_map", O_RDONLY);
 	map = find_right_line(fd, i, map);
+	put_background(start);
 	if (map)
-		mlx_string_put(start->ptr, start->win,
-			498 / 2, 150, 16711680, map);
+		put_message(map, start);
+		// mlx_string_put(start->ptr, start->win,
+		// 	498 / 2, 150, 16711680, map);
 	if (key == ENTER)
-		{start->map_choice = ft_strdup(map);}
+		start->map_choice = ft_strdup(map);
 	while (map)
 	{
 		free(map);

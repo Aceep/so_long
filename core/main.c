@@ -12,6 +12,7 @@
 
 #include "../includes/so_long.h"
 
+size_t	choice = 0;
 // void	print_map(t_game *game)
 // {
 // 	int			i;
@@ -53,12 +54,25 @@ char	*remove_backslashn(char *map)
 	return (map);
 }
 
+void	put_again(char *ag)
+{
+	int fd;
+
+	fd = open("again", O_WRONLY | O_APPEND | O_CREAT, 0644);
+	ft_putstr_fd(ag, fd);
+	close (fd);
+}
+
 int	choice_file(char *av)
 {
 	t_game	*game;
 	char	*map;
 	int		fd;
+	size_t	*rec;
 
+
+	rec = &choice;
+	(*rec)--;
 	fd = open("choice", O_RDONLY);
 	map = get_next_line(fd);
 	map = remove_backslashn(map);

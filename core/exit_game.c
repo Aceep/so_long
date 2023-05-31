@@ -62,5 +62,5 @@ int	exit_game(t_game *game)
 		ft_printf("\033[1;31mLose\n\033[0m");
 	if (game)
 		free_game(game);
-	exit(1);
+	exit(0);
 }

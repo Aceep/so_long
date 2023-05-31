@@ -26,7 +26,7 @@ void	destroy_imagess(t_game *data)
 
 	p = (void **)&data->img;
 	i = 0;
-	while (i < IMG_NB)
+	while (i < IMG_NB_START)
 		destroy_image_v2s(data->ptr, p[i++]);
 }
 

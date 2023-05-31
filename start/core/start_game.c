@@ -17,6 +17,7 @@ void	start_screen(t_game *start)
 	int	x;
 
 	x = 0;
+	put_background(start);
 	mlx_put_image_to_window(start->ptr, start->win,
 		start->img.preview[4], 498 / 2 - 2 * IMG_W, 70);
 	mlx_put_image_to_window(start->ptr, start->win,

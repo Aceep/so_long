@@ -50,6 +50,7 @@ CORE_DIR = ./core
 #Sources
 SRCS += main.c
 SRCS += xpm_main.c
+SRCS += xpm2.c
 SRCS += start_game.c
 SRCS += error_struct.c
 SRCS += free.c

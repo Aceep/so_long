@@ -12,23 +12,30 @@ execution() {
 		MAP=0
 	fi
 }
+cine=0
 i=0
 MAP=1
-echo -e "${BYELLOW}Welcome on So_long ! Are ready for a great adventure ?${NC}"
-while [ "$MAP" == "1" ]; do
-	./start/start $i
-	if [ -f "again" ]; then
-		rm again
-	fi
+echo -e "${BYELLOW}Welcome on So_long ! Are you ready for a great adventure ?${NC}"
+while [ "$MAP" == "1" ] || [ "$MAP" == "-1" ]; do
+	./start/start $cine
+	cine=1
 	if [ -f "choice" ]; then
 		./so_long "o"
+		execution
 		let "i=i+1"
+		if [ -f "again" ]; then
+			rm again
+		fi
 		rm choice
 	fi
-	execution
 	if [ "$i" != "0" ]; then
 		if [ "$MAP" == "1" ]; then
 			echo "Let's play again !"
+		elif [ "$MAP" == "-1" ]; then
+			echo "You need to choose another map !"
+			if [ "$i" > "0" ]; then
+				let "i=i-1"
+			fi
 		fi
 	fi
 done

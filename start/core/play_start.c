@@ -55,11 +55,11 @@ int	key_hook_start(int key, t_game *start)
 
 int	loop_hook_start(t_game *start)
 {
-	static int i;
+	static int	i;
 	static int	end;
 
 	if (++i != 150)
-	 	return (0);
+		return (0);
 	if (start->end == -3 && end == 0)
 		end = opening_door(start);
 	else if (start->end == -3 && end == 1)

@@ -21,7 +21,8 @@ void	xpm_preview(t_game *start)
 	start->img.preview[1] = mlx_xpm_file_to_image(start->ptr, P_RED, &w, &h);
 	start->img.preview[2] = mlx_xpm_file_to_image(start->ptr, P_GREEN, &w, &h);
 	start->img.preview[3] = mlx_xpm_file_to_image(start->ptr, P_BLUE, &w, &h);
-	start->img.preview[4] = mlx_xpm_file_to_image(start->ptr, INSTRUCT_START, &w, &h);
+	start->img.preview[4] = mlx_xpm_file_to_image(start->ptr,
+			INSTRUCT_START, &w, &h);
 	start->img.preview[5] = mlx_xpm_file_to_image(start->ptr, S_BLACK, &w, &h);
 	start->img.cursor = mlx_xpm_file_to_image(start->ptr, CURSOR, &w, &h);
 }
@@ -52,6 +53,13 @@ void	xpm_doors_1(t_game *start)
 	start->img.door[18] = mlx_xpm_file_to_image(start->ptr, D_19, &w, &h);
 	start->img.door[19] = mlx_xpm_file_to_image(start->ptr, D_20, &w, &h);
 	start->img.door[20] = mlx_xpm_file_to_image(start->ptr, D_21, &w, &h);
+}
+
+void	xpm_doors_2(t_game *start)
+{
+	int	w;
+	int	h;
+
 	start->img.door[21] = mlx_xpm_file_to_image(start->ptr, D_22, &w, &h);
 	start->img.door[22] = mlx_xpm_file_to_image(start->ptr, D_23, &w, &h);
 	start->img.door[23] = mlx_xpm_file_to_image(start->ptr, D_24, &w, &h);
@@ -96,20 +104,15 @@ void	xpm_alphabet(t_game *start)
 	start->img.alphabet[14] = mlx_xpm_file_to_image(start->ptr, O, &w, &h);
 	start->img.alphabet[15] = mlx_xpm_file_to_image(start->ptr, P, &w, &h);
 	start->img.alphabet[16] = mlx_xpm_file_to_image(start->ptr, Q, &w, &h);
-	start->img.alphabet[17] = mlx_xpm_file_to_image(start->ptr, R, &w, &h);
-	start->img.alphabet[18] = mlx_xpm_file_to_image(start->ptr, S, &w, &h);
-	start->img.alphabet[19] = mlx_xpm_file_to_image(start->ptr, T, &w, &h);
-	start->img.alphabet[20] = mlx_xpm_file_to_image(start->ptr, U, &w, &h);
-	start->img.alphabet[21] = mlx_xpm_file_to_image(start->ptr, V, &w, &h);
-	start->img.alphabet[22] = mlx_xpm_file_to_image(start->ptr, W, &w, &h);
-	start->img.alphabet[23] = mlx_xpm_file_to_image(start->ptr, X, &w, &h);
-	start->img.alphabet[24] = mlx_xpm_file_to_image(start->ptr, Y, &w, &h);
-	start->img.alphabet[25] = mlx_xpm_file_to_image(start->ptr, Z, &w, &h);
 }
+
 void	all_xpm_for_start(t_game *start)
 {
 	xpm_doors_1(start);
+	xpm_doors_2(start);
 	xpm_alphabet(start);
-	//xpm_doors_2(start);
+	xpm_alphabet2(start);
+	xpm_background1(start);
+	//xpm_background2(start);
 	xpm_preview(start);
 }

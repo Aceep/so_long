@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:47:02 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/29 23:56:51 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/31 21:03:21 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,7 @@ typedef struct s_image
 	void	*preview[6];
 	void	*door[41];
 	void	*alphabet[26];
+	void	*numbers[10];
 	void	*background[34];
 }t_image;
 

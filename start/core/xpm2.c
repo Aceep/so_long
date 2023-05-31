@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 17:49:45 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/31 14:20:39 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/31 21:00:45 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@ void	xpm_alphabet2(t_game *start)
 	start->img.alphabet[23] = mlx_xpm_file_to_image(start->ptr, X, &w, &h);
 	start->img.alphabet[24] = mlx_xpm_file_to_image(start->ptr, Y, &w, &h);
 	start->img.alphabet[25] = mlx_xpm_file_to_image(start->ptr, Z, &w, &h);
+	start->img.numbers[0] = mlx_xpm_file_to_image(start->ptr, A0, &w, &h);
+	start->img.numbers[1] = mlx_xpm_file_to_image(start->ptr, A1, &w, &h);
+	start->img.numbers[2] = mlx_xpm_file_to_image(start->ptr, A2, &w, &h);
+	start->img.numbers[3] = mlx_xpm_file_to_image(start->ptr, A3, &w, &h);
+	start->img.numbers[4] = mlx_xpm_file_to_image(start->ptr, A4, &w, &h);
+	start->img.numbers[5] = mlx_xpm_file_to_image(start->ptr, A5, &w, &h);
+	start->img.numbers[6] = mlx_xpm_file_to_image(start->ptr, A6, &w, &h);
+	start->img.numbers[7] = mlx_xpm_file_to_image(start->ptr, A7, &w, &h);
+	start->img.numbers[8] = mlx_xpm_file_to_image(start->ptr, A8, &w, &h);
+	start->img.numbers[9] = mlx_xpm_file_to_image(start->ptr, A9, &w, &h);
 }
 
 void	xpm_background1(t_game *start)

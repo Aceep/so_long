@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   opening.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:04:02 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/31 14:04:04 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/31 21:10:28 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,29 @@ int	put_message(char *msg, t_game *start)
 	put_background(start);
 	while (msg[i] && msg[i] != '.')
 	{
-		val_let = (char)msg[i] - 'a';
 		if (ft_isalpha(msg[i]) == 1)
+		{
+			val_let = (char)msg[i] - 'a';
 			mlx_put_image_to_window(start->ptr, start->win,
 				start->img.alphabet[val_let], x, y);
-		if ((x >= 368 && ft_isalpha(msg[i + 1])) || !ft_isalpha(msg[i]))
+			x += 64;
+		}
+		if (ft_isdigit(msg[i]) == 1)
+		{
+			val_let = (char)msg[i] - '0';
+			mlx_put_image_to_window(start->ptr, start->win,
+				start->img.numbers[val_let], x, y);
+			x += 64;
+		}
+		if ((x > 400 && ft_isalpha(msg[i + 1])) || (!ft_isalpha(msg[i]) && !ft_isdigit(msg[i])))
 		{
 			y += 70;
-			x = 0;
+			x = 0; 
 		}
 		i ++;
-		x += 64;
 	}
 	fno ++;
-	if (fno == 1000)
+	if (fno == 500)
 	{
 		mlx_clear_window(start->ptr, start->win);
 		start->end = -2;
@@ -53,7 +62,7 @@ int	opening_door(t_game *start)
 	static int	slw;
 
 	mlx_put_image_to_window(start->ptr, start->win, start->img.door[fno], 0, 0);
-	if ((slw % 10) == 0)
+	if ((slw % 6) == 0)
 		fno ++;
 	slw ++;
 	if (fno == 41)

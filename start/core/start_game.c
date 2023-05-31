@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:59:08 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/27 19:52:06 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/05/31 19:55:44 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	start_screen(t_game *start)
 		start->img.preview[2], 498 / 2, 120);
 	mlx_put_image_to_window(start->ptr, start->win,
 		start->img.preview[3], 498 / 2 + IMG_W, 120);
-	while (x < 20)
-	{
-		mlx_put_image_to_window(start->ptr, start->win,
-			start->img.preview[5], x * IMG_W, start->cursor.y);
-		x ++;
-	}
+	// while (x < 20)
+	// {
+	// 	mlx_put_image_to_window(start->ptr, start->win,
+	// 		start->img.preview[5], x * IMG_W, start->cursor.y);
+	// 	x ++;
+	// }
 	mlx_put_image_to_window(start->ptr, start->win,
 		start->img.cursor, start->cursor.x, start->cursor.y);
 }

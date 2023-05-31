@@ -19,15 +19,15 @@ echo -e "${BYELLOW}Welcome on So_long ! Are you ready for a great adventure ?${N
 while [ "$MAP" == "1" ] || [ "$MAP" == "-1" ]; do
 	./start/start $cine
 	cine=1
+	if [ -f "again" ]; then
+		rm again
+	fi
 	if [ -f "choice" ]; then
 		./so_long "o"
-		execution
 		let "i=i+1"
-		if [ -f "again" ]; then
-			rm again
-		fi
 		rm choice
 	fi
+	execution
 	if [ "$i" != "0" ]; then
 		if [ "$MAP" == "1" ]; then
 			echo "Let's play again !"

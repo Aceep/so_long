@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:52:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/30 10:04:53 by aceep            ###   ########.fr       */
+/*   Updated: 2023/05/31 21:03:45 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,18 @@
 # define B33 "graph/Background/frame-01.xpm"
 # define B34 "graph/Background/frame-01.xpm"
 
-# define IMG_NB_START 101
+# define A0 "graph/Alphabet/0.xpm"
+# define A1 "graph/Alphabet/1.xpm"
+# define A2 "graph/Alphabet/2.xpm"
+# define A3 "graph/Alphabet/3.xpm"
+# define A4 "graph/Alphabet/4.xpm"
+# define A5 "graph/Alphabet/5.xpm"
+# define A6 "graph/Alphabet/6.xpm"
+# define A7 "graph/Alphabet/7.xpm"
+# define A8 "graph/Alphabet/8.xpm"
+# define A9 "graph/Alphabet/9.xpm"
+
+# define IMG_NB_START 111
 
 typedef struct s_game	t_game;
 

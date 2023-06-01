@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:56:39 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/29 23:44:34 by aceep            ###   ########.fr       */
+/*   Updated: 2023/06/01 11:01:09 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	put_background(t_game *start)
 	static int fno;
 	static int	slw;
 
-	mlx_put_image_to_window(start->ptr, start->win, start->img.background[0], 0, 0);
+	mlx_put_image_to_window(start->ptr, start->win, start->img.background[fno], 0, 0);
 	if ((slw % 5) == 0)
 		fno ++;
 	slw ++;
-	if (fno == 33)
+	if (fno == 34)
 		fno = 0;
 }
 

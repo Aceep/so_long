@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   play.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:32:54 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/27 14:32:36 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/06/02 00:31:39 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,11 @@ int	loop_hook(t_game *game)
 	static int	i;
 
 	if (game->end > 0)
+	{
+		if (game->end == 2)
+			big_bang(game);
 		end_screen(game);
+	}
 	if ((++i % 1000) != 0)
 		return (0);
 	if (game->end == 0)

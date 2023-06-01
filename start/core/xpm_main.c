@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 17:49:45 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/30 00:06:01 by aceep            ###   ########.fr       */
+/*   Updated: 2023/06/01 11:42:57 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,11 +108,14 @@ void	xpm_alphabet(t_game *start)
 
 void	all_xpm_for_start(t_game *start)
 {
-	xpm_doors_1(start);
-	xpm_doors_2(start);
+	if (start->end == -3)
+	{
+		xpm_doors_1(start);
+		xpm_doors_2(start);
+	}
 	xpm_alphabet(start);
 	xpm_alphabet2(start);
 	xpm_background1(start);
-	//xpm_background2(start);
+	xpm_background2(start);
 	xpm_preview(start);
 }

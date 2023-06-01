@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:56:15 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/29 14:27:32 by aceep            ###   ########.fr       */
+/*   Updated: 2023/06/01 11:41:59 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ int	start_game(t_game *start, char *again)
 	start->ptr = mlx_init();
 	if (!start->ptr)
 		error_exit(E_MLX, start);
-	start->win = mlx_new_window(start->ptr, 498, 338, "So_long");
+	start->win = mlx_new_window(start->ptr, 1000, 679, "So_long");
 	if (!start->win)
 		error_exit(E_MLX, start);
 	if (ft_atoi(again) == 0)
 		start->end = -3;
-	else
+	else if (ft_atoi(again) == 1)
 		start->end = -2;
 	cursor_init(start);
 	all_xpm_for_start(start);
@@ -62,7 +62,7 @@ int	main(int ac, char **av)
 		start = ft_calloc(1, sizeof(t_game));
 		create_dico(start);
 		start_game(start, av[1]);
-		start_screen(start);
+		//start_screen(start);
 	}
 	return (0);
 }

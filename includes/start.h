@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:52:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/31 21:03:45 by aceep            ###   ########.fr       */
+/*   Updated: 2023/06/01 11:18:36 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,39 +85,41 @@
 # define Z "graph/Alphabet/z.xpm"
 
 # define B1 "graph/Background/frame-01.xpm"
-# define B2 "graph/Background/frame-01.xpm"
-# define B3 "graph/Background/frame-01.xpm"
-# define B4 "graph/Background/frame-01.xpm"
-# define B5 "graph/Background/frame-01.xpm"
-# define B6 "graph/Background/frame-01.xpm"
-# define B7 "graph/Background/frame-01.xpm"
-# define B8 "graph/Background/frame-01.xpm"
-# define B9 "graph/Background/frame-01.xpm"
-# define B10 "graph/Background/frame-01.xpm"
-# define B11 "graph/Background/frame-01.xpm"
-# define B12 "graph/Background/frame-01.xpm"
-# define B13 "graph/Background/frame-01.xpm"
-# define B14 "graph/Background/frame-01.xpm"
-# define B15 "graph/Background/frame-01.xpm"
-# define B16 "graph/Background/frame-01.xpm"
-# define B17 "graph/Background/frame-01.xpm"
-# define B18 "graph/Background/frame-01.xpm"
-# define B19 "graph/Background/frame-01.xpm"
-# define B20 "graph/Background/frame-01.xpm"
-# define B21 "graph/Background/frame-01.xpm"
-# define B22 "graph/Background/frame-01.xpm"
-# define B23 "graph/Background/frame-01.xpm"
-# define B24 "graph/Background/frame-01.xpm"
-# define B25 "graph/Background/frame-01.xpm"
-# define B26 "graph/Background/frame-01.xpm"
-# define B27 "graph/Background/frame-01.xpm"
-# define B28 "graph/Background/frame-01.xpm"
-# define B29 "graph/Background/frame-01.xpm"
-# define B30 "graph/Background/frame-01.xpm"
-# define B31 "graph/Background/frame-01.xpm"
-# define B32 "graph/Background/frame-01.xpm"
-# define B33 "graph/Background/frame-01.xpm"
-# define B34 "graph/Background/frame-01.xpm"
+# define B2 "graph/Background/frame-02.xpm"
+# define B3 "graph/Background/frame-03.xpm"
+# define B4 "graph/Background/frame-04.xpm"
+# define B5 "graph/Background/frame-05.xpm"
+# define B6 "graph/Background/frame-06.xpm"
+# define B7 "graph/Background/frame-07.xpm"
+# define B8 "graph/Background/frame-08.xpm"
+# define B9 "graph/Background/frame-09.xpm"
+# define B10 "graph/Background/frame-10.xpm"
+# define B11 "graph/Background/frame-11.xpm"
+# define B12 "graph/Background/frame-12.xpm"
+# define B13 "graph/Background/frame-13.xpm"
+# define B14 "graph/Background/frame-14.xpm"
+# define B15 "graph/Background/frame-15.xpm"
+# define B16 "graph/Background/frame-16.xpm"
+# define B17 "graph/Background/frame-17.xpm"
+# define B18 "graph/Background/frame-18.xpm"
+# define B19 "graph/Background/frame-19.xpm"
+# define B20 "graph/Background/frame-20.xpm"
+# define B21 "graph/Background/frame-21.xpm"
+# define B22 "graph/Background/frame-22.xpm"
+# define B23 "graph/Background/frame-23.xpm"
+# define B24 "graph/Background/frame-24.xpm"
+# define B25 "graph/Background/frame-25.xpm"
+# define B26 "graph/Background/frame-26.xpm"
+# define B27 "graph/Background/frame-27.xpm"
+# define B28 "graph/Background/frame-28.xpm"
+# define B29 "graph/Background/frame-29.xpm"
+# define B30 "graph/Background/frame-30.xpm"
+# define B31 "graph/Background/frame-31.xpm"
+# define B32 "graph/Background/frame-32.xpm"
+# define B33 "graph/Background/frame-33.xpm"
+# define B34 "graph/Background/frame-34.xpm"
+# define B35 "graph/Background/frame-35.xpm"
+# define LANDSCAPE "graph/Background/landscape.xpm"
 
 # define A0 "graph/Alphabet/0.xpm"
 # define A1 "graph/Alphabet/1.xpm"
@@ -130,7 +132,7 @@
 # define A8 "graph/Alphabet/8.xpm"
 # define A9 "graph/Alphabet/9.xpm"
 
-# define IMG_NB_START 111
+# define IMG_NB_START 142
 
 typedef struct s_game	t_game;
 

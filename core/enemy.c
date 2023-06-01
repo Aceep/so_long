@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enemy.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 13:24:39 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/26 16:46:29 by alycgaut         ###   ########.fr       */
+/*   Updated: 2023/06/01 17:53:13 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ void	anime_ennemy(t_game *game, int x, int y)
 
 	mlx_put_image_to_window(game->ptr, game->win, game->img.ennemy[fno],
 		IMG_W * x, IMG_H * y);
-	if (i >= game->count.x && j == 3 * game->count.x)
+	if (i >= game->count.x && j == 1 * game->count.x)
 	{
 		fno ++;
 		j = 0;
 		i = 0;
 	}
-	if (fno == 6)
+	if (fno == 19)
 		fno = 0;
 	i ++;
 	j ++;

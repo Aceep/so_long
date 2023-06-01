@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:04:02 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/31 21:10:28 by aceep            ###   ########.fr       */
+/*   Updated: 2023/06/01 11:35:59 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ int	put_message(char *msg, t_game *start)
 	static int	fno;
 	int			y;
 
-	y = 50;
+	y = 100;
 	i = 0;
-	x = 0;
-	put_background(start);
+	x = 200;
+	if (start->end == -3)
+		mlx_put_image_to_window(start->ptr, start->win, start->img.background[35], 0 , 0);
+	else
+		put_background(start);
 	while (msg[i] && msg[i] != '.')
 	{
 		if (ft_isalpha(msg[i]) == 1)
@@ -40,15 +43,15 @@ int	put_message(char *msg, t_game *start)
 				start->img.numbers[val_let], x, y);
 			x += 64;
 		}
-		if ((x > 400 && ft_isalpha(msg[i + 1])) || (!ft_isalpha(msg[i]) && !ft_isdigit(msg[i])))
+		if ((x > 950 && ft_isalpha(msg[i + 1])) || (!ft_isalpha(msg[i]) && !ft_isdigit(msg[i])))
 		{
-			y += 70;
-			x = 0; 
+			y += 80;
+			x = 200; 
 		}
 		i ++;
 	}
 	fno ++;
-	if (fno == 500)
+	if (fno == 500 && start->end == -3)
 	{
 		mlx_clear_window(start->ptr, start->win);
 		start->end = -2;

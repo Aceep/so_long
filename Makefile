@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
+#    By: aceep <aceep@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 15:45:50 by alycgaut          #+#    #+#              #
-#    Updated: 2023/05/26 16:50:54 by alycgaut         ###   ########.fr        #
+#    Updated: 2023/06/01 23:53:19 by aceep            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ SRCS += check_path.c
 SRCS += enemy.c
 SRCS += enemy_patrol.c
 SRCS += generate_map.c
+SRCS += big_bang.c
 
 #Vpath Source
 vpath %.c $(CORE_DIR)

@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:47:02 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/05/31 21:03:21 by aceep            ###   ########.fr       */
+/*   Updated: 2023/06/02 00:59:22 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # ifndef PATROL
-#  define PATROL 1 
+#  define PATROL 1
 // 1 = on / 0 = off
 #  define START_SCREEN -1 
 //-1 = on / 0 = off
@@ -57,13 +57,13 @@ extern size_t	choice;
 
 //Environnement
 # define BRICK "graph/BRICK_1A.xpm"
-# define GRASS "graph/DIRT_1A.xpm"
+# define GRASS "graph/grass.xpm"
 # define EXIT "graph/HEDGE_1C.xpm"
 # define CHERRY "graph/gem.xpm"
 
 //Ingame Character
 # define DINO "graph/Ingame_Character/Yellow/Main-character-So_Long.xpm"
-# define DINO_LEFT "graph/Ingame_Character/Yellow/Main-character-So_Long.xpm"
+# define DINO_LEFT "graph/Ingame_Character/Yellow/Main-So_Long_Left.xpm"
 # define DINO_RED "graph/Ingame_Character/Red/Character_red.xpm"
 # define DINO_RED_LEFT "graph/Ingame_Character/Red/Character_red_left.xpm"
 # define DINO_GREEN "graph/Ingame_Character/Green/Character_green.xpm"
@@ -79,14 +79,29 @@ extern size_t	choice;
 # define RED "graph/End_screen/End_red.xpm"
 # define GREEN "graph/End_screen/End_green.xpm"
 # define YELLOW "graph/End_screen/End_yellow.xpm"
+# define TELEPORT "graph/End_screen/Teleportation.xpm"
 
 //Opposum
-# define OPPO "graph/Enemy/opossum.xpm"
-# define OPPO2 "graph/Enemy/opossum-2.xpm"
-# define OPPO3 "graph/Enemy/opossum-3.xpm"
-# define OPPO4 "graph/Enemy/opossum-4.xpm"
-# define OPPO5 "graph/Enemy/opossum-5.xpm"
-# define OPPO6 "graph/Enemy/opossum-6.xpm"
+# define GOLEM "graph/Enemy/0_Golem_Walking_000.xpm"
+# define GOLEM2 "graph/Enemy/0_Golem_Walking_001.xpm"
+# define GOLEM3 "graph/Enemy/0_Golem_Walking_002.xpm"
+# define GOLEM4 "graph/Enemy/0_Golem_Walking_003.xpm"
+# define GOLEM5 "graph/Enemy/0_Golem_Walking_004.xpm"
+# define GOLEM6 "graph/Enemy/0_Golem_Walking_005.xpm"
+# define GOLEM7 "graph/Enemy/0_Golem_Walking_006.xpm"
+# define GOLEM8 "graph/Enemy/0_Golem_Walking_007.xpm"
+# define GOLEM9 "graph/Enemy/0_Golem_Walking_008.xpm"
+# define GOLEM10 "graph/Enemy/0_Golem_Walking_009.xpm"
+# define GOLEM11 "graph/Enemy/0_Golem_Walking_010.xpm"
+# define GOLEM12 "graph/Enemy/0_Golem_Walking_011.xpm"
+# define GOLEM13 "graph/Enemy/0_Golem_Walking_012.xpm"
+# define GOLEM14 "graph/Enemy/0_Golem_Walking_013.xpm"
+# define GOLEM15 "graph/Enemy/0_Golem_Walking_014.xpm"
+# define GOLEM16 "graph/Enemy/0_Golem_Walking_015.xpm"
+# define GOLEM17 "graph/Enemy/0_Golem_Walking_016.xpm"
+# define GOLEM18 "graph/Enemy/0_Golem_Walking_017.xpm"
+# define GOLEM19 "graph/Enemy/0_Golem_Walking_018.xpm"
+# define GOLEM20 "graph/Enemy/0_Golem_Walking_019.xpm"
 
 //Start Screen and Preview
 # define CURSOR "graph/white-up-arrow-icon-image.xpm"
@@ -97,7 +112,18 @@ extern size_t	choice;
 # define INSTRUCT_START "graph/Preview_Character/Start_instructions.xpm"
 # define S_BLACK "graph/Preview_Character/black.xpm"
 
-# define IMG_NB 72
+# define NUCLEAR "graph/Nuclear_Explod/Nuclear_explosion1.xpm"
+# define NUCLEAR1 "graph/Nuclear_Explod/Nuclear_explosion2.xpm"
+# define NUCLEAR2 "graph/Nuclear_Explod/Nuclear_explosion3.xpm"
+# define NUCLEAR3 "graph/Nuclear_Explod/Nuclear_explosion4.xpm"
+# define NUCLEAR4 "graph/Nuclear_Explod/Nuclear_explosion5.xpm"
+# define NUCLEAR5 "graph/Nuclear_Explod/Nuclear_explosion6.xpm"
+# define NUCLEAR6 "graph/Nuclear_Explod/Nuclear_explosion7.xpm"
+# define NUCLEAR7 "graph/Nuclear_Explod/Nuclear_explosion8.xpm"
+# define NUCLEAR8 "graph/Nuclear_Explod/Nuclear_explosion9.xpm"
+# define NUCLEAR9 "graph/Nuclear_Explod/Nuclear_explosion10.xpm"
+
+# define IMG_NB 57
 
 typedef enum e_config_error
 {
@@ -135,14 +161,15 @@ typedef struct s_image
 	void	*collectible;
 	void	*character[8];
 	void	*exit;
-	void	*end[7];
-	void	*ennemy[6];
+	void	*end[8];
+	void	*ennemy[20];
+	void	*crash[10];
 	void	*cursor;
 	void	*preview[6];
 	void	*door[41];
 	void	*alphabet[26];
 	void	*numbers[10];
-	void	*background[34];
+	void	*background[36];
 }t_image;
 
 typedef struct s_player
@@ -255,5 +282,6 @@ void		ft_playerlist(t_game *game);
 //Bonus
 char		*remove_backslashn(char *map);
 void		put_again(char *ag);
-
+void		big_bang(t_game *game);
+void		image_end(t_game *game);
 #endif 

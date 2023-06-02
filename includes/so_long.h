@@ -241,6 +241,7 @@ int			path_check(t_game *game);
 void		error_exit(int error_type, t_game *game);
 void		error_exit_charset(int error_type, t_game *game, char c);
 void		error_exit_count(int error_type, t_game *game, char *c);
+int    		image_error(t_game  *game);
 
 //Free
 void		free_map(t_map **map, int height);

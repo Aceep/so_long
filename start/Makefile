@@ -53,6 +53,7 @@ SRCS += xpm_main.c
 SRCS += xpm2.c
 SRCS += start_game.c
 SRCS += error_struct.c
+SRCS += error_image.c
 SRCS += free.c
 SRCS += play_start.c
 SRCS += choose_map.c

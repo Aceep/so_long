@@ -123,6 +123,8 @@ t_game	*create_game(char *file_map, int c)
 	if (!game->win)
 		error_exit(E_MLX, game);
 	xpm_init(game);
+	if (image_error(game))
+		error_exit(E_IMG, game);
 	generate_map(game);
 	ft_playerlist(game);
 	charac_choice(c, game);

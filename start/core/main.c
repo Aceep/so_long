@@ -48,6 +48,8 @@ int	start_game(t_game *start, char *again)
 		start->end = -2;
 	cursor_init(start);
 	all_xpm_for_start(start);
+	if (image_errors(start))
+		error_exit(E_IMG, start);
 	play_start(start);
 	ret = start->cursor.action;
 	return (ret);

@@ -160,6 +160,7 @@ void	start_screen(t_game *start);
 
 //Exit and Assignment
 int		exit_start(t_game *start);
+int    	image_errors(t_game  *game);
 
 //Play Start Screen
 int		key_hook_start(int key, t_game *start);

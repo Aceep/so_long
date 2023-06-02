@@ -78,6 +78,7 @@ SRCS += enemy.c
 SRCS += enemy_patrol.c
 SRCS += generate_map.c
 SRCS += big_bang.c
+SRCS += error_image.c
 
 #Vpath Source
 vpath %.c $(CORE_DIR)

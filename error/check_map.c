@@ -47,7 +47,7 @@ int	check_type(t_game *game)
 		x = 0;
 		while (x < game->width)
 		{
-			if (!ft_ischarset(game->map[y][x].value, "10CEPXF"))
+			if (!ft_ischarset(game->map[y][x].value, "10CEPX"))
 				error_exit_charset(E_TYPE, game, game->map[y][x].value);
 			if (game->map[y][x].value == 'P')
 				game->count.p ++;
@@ -64,7 +64,7 @@ int	check_type(t_game *game)
 	return (0);
 }
 
-void	check_rec(char *line, t_game *game)
+int	check_rec(char *line, t_game *game)
 {
 	int	i;
 
@@ -72,7 +72,8 @@ void	check_rec(char *line, t_game *game)
 	while (line[i] != '\n' && line[i])
 		i ++;
 	if (i != game->width)
-		error_exit(E_REC, game);
+		return (1);
+	return (0);
 }
 
 int	map_error(t_game *game)

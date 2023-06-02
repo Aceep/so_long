@@ -150,7 +150,7 @@ int		create_dico(t_game *start);
 //Starter
 int		start_game(t_game *start, char *again);
 int		opening_door(t_game *start);
-int		put_message(char *msg, t_game *start);
+void	put_message(char *msg, t_game *start);
 
 //Character choice
 void	cursor_init(t_game *game);
@@ -179,8 +179,11 @@ void	free_dico(t_letter **dico);
 //Images
 void	all_xpm_for_start(t_game *game);
 void	xpm_alphabet2(t_game *start);
+void	xpm_alphabet(t_game *start);
 void	xpm_background1(t_game *start);
 void	xpm_background2(t_game *start);
 void	put_background(t_game *start);
+void	xpm_doors_2(t_game *start);
+void	xpm_doors_1(t_game *start);
 
 #endif

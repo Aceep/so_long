@@ -71,10 +71,28 @@ void	xpm_init(t_game *game)
 	xpm_preview(game);
 	xpm_ingame_character(game);
 	xpm_end_screen(game);
+	xpm_enemy(game);
 	game->img.floor = mlx_xpm_file_to_image(game->ptr, GRASS, &w, &h);
 	game->img.wall = mlx_xpm_file_to_image(game->ptr, BRICK, &w, &h);
 	game->img.exit = mlx_xpm_file_to_image(game->ptr, EXIT, &w, &h);
 	game->img.collectible = mlx_xpm_file_to_image(game->ptr, CHERRY, &w, &h);
+	game->img.crash[0] = mlx_xpm_file_to_image(game->ptr, NUCLEAR, &w, &h);
+	game->img.crash[1] = mlx_xpm_file_to_image(game->ptr, NUCLEAR1, &w, &h);
+	game->img.crash[2] = mlx_xpm_file_to_image(game->ptr, NUCLEAR2, &w, &h);
+	game->img.crash[3] = mlx_xpm_file_to_image(game->ptr, NUCLEAR3, &w, &h);
+	game->img.crash[4] = mlx_xpm_file_to_image(game->ptr, NUCLEAR4, &w, &h);
+	game->img.crash[5] = mlx_xpm_file_to_image(game->ptr, NUCLEAR5, &w, &h);
+	game->img.crash[6] = mlx_xpm_file_to_image(game->ptr, NUCLEAR6, &w, &h);
+	game->img.crash[7] = mlx_xpm_file_to_image(game->ptr, NUCLEAR7, &w, &h);
+	game->img.crash[8] = mlx_xpm_file_to_image(game->ptr, NUCLEAR8, &w, &h);
+	game->img.crash[9] = mlx_xpm_file_to_image(game->ptr, NUCLEAR9, &w, &h);
+}
+
+void	xpm_enemy(t_game *game)
+{
+	int	w;
+	int	h;
+
 	game->img.ennemy[0] = mlx_xpm_file_to_image(game->ptr, GOLEM, &w, &h);
 	game->img.ennemy[1] = mlx_xpm_file_to_image(game->ptr, GOLEM2, &w, &h);
 	game->img.ennemy[2] = mlx_xpm_file_to_image(game->ptr, GOLEM3, &w, &h);
@@ -95,14 +113,4 @@ void	xpm_init(t_game *game)
 	game->img.ennemy[17] = mlx_xpm_file_to_image(game->ptr, GOLEM18, &w, &h);
 	game->img.ennemy[18] = mlx_xpm_file_to_image(game->ptr, GOLEM19, &w, &h);
 	game->img.ennemy[19] = mlx_xpm_file_to_image(game->ptr, GOLEM20, &w, &h);
-	game->img.crash[0] = mlx_xpm_file_to_image(game->ptr, NUCLEAR, &w, &h);
-	game->img.crash[1] = mlx_xpm_file_to_image(game->ptr, NUCLEAR1, &w, &h);
-	game->img.crash[2] = mlx_xpm_file_to_image(game->ptr, NUCLEAR2, &w, &h);
-	game->img.crash[3] = mlx_xpm_file_to_image(game->ptr, NUCLEAR3, &w, &h);
-	game->img.crash[4] = mlx_xpm_file_to_image(game->ptr, NUCLEAR4, &w, &h);
-	game->img.crash[5] = mlx_xpm_file_to_image(game->ptr, NUCLEAR5, &w, &h);
-	game->img.crash[6] = mlx_xpm_file_to_image(game->ptr, NUCLEAR6, &w, &h);
-	game->img.crash[7] = mlx_xpm_file_to_image(game->ptr, NUCLEAR7, &w, &h);
-	game->img.crash[8] = mlx_xpm_file_to_image(game->ptr, NUCLEAR8, &w, &h);
-	game->img.crash[9] = mlx_xpm_file_to_image(game->ptr, NUCLEAR9, &w, &h);
 }

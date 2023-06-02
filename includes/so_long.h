@@ -53,7 +53,7 @@
 # define IMG_W 64
 # define IMG_H 64
 
-extern size_t	choice;
+extern size_t	g_choice;
 
 //Environnement
 # define BRICK "graph/BRICK_1A.xpm"
@@ -234,7 +234,7 @@ void		assign_value(t_game *game, int y, char *line);
 int			check_ber(char *av);
 int			map_error(t_game *game);
 int			wall_check(t_game *game);
-void		check_rec(char *line, t_game *game);
+int			check_rec(char *line, t_game *game);
 int			path_check(t_game *game);
 
 //Error
@@ -248,6 +248,7 @@ void		free_game(t_game *game);
 void		free_enemy_stack(t_player **enemy);
 void		free_game(t_game *game);
 void		free_game_data(t_game *game);
+void		free_gnl(int fd, char *line);
 
 //Play
 int			key_hook(int key, t_game *game);
@@ -265,6 +266,7 @@ int			exit_game(t_game *game);
 //Images
 void		xpm_init(t_game *game);
 void		xpm_preview(t_game *game);
+void		xpm_enemy(t_game *game);
 
 //Map
 void		display_map(t_game *game);
@@ -282,6 +284,6 @@ void		ft_playerlist(t_game *game);
 //Bonus
 char		*remove_backslashn(char *map);
 void		put_again(char *ag);
-void		big_bang(t_game *game);
+int			big_bang(t_game *game);
 void		image_end(t_game *game);
 #endif 

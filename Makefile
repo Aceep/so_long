@@ -98,6 +98,9 @@ PATROL = 0
 #Rules
 all : $(NAME)
 
+mega :
+	@./mega
+
 $(NAME): $(MLX) $(LIBFT) $(OBJS)
 	@$(CC) $^ $(LDFLAGS) $(MLX_FLAGS) $(INCLUDES) -o $@
 	@make --no-print-directory -C ./start
@@ -125,9 +128,6 @@ clean : $(OBJS)
 	@$(RM) $(OBJS_DIR)
 	@$(RM) start/objs
 
-play : 
-	./running.sh
-
 fclean : clean
 	@$(RM) $(LIBFT)
 	@$(RM) $(MLX)
@@ -140,3 +140,13 @@ lclean :
 
 re : fclean 
 	@make --no-print-directory all
+
+norme :
+	norminette core/
+	norminette error/
+	norminette free/
+	norminette includes/
+	norminette libft/
+	norminette start/
+
+.PHONY : mega

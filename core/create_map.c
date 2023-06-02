@@ -68,24 +68,24 @@ void	put_map_value(t_game *game, char *file_map)
 	int		fd;
 	char	*line;
 	int		y;
+	int		ret;
 
 	fd = open_file(file_map, game);
 	y = -1;
 	while (++y < game->height)
 	{
 		line = get_next_line(fd);
-		check_rec(line, game);
+		ret = check_rec(line, game);
 		if (!line)
 			error_exit(E_GNL, game);
-		assign_value(game, y, line);
+		if (ret == 0)
+			assign_value(game, y, line);
 		free(line);
 	}
 	line = get_next_line(fd);
-	while (line)
-	{
-		line = get_next_line(fd);
-		free(line);
-	}
+	free_gnl(fd, line);
+	if (ret == 1)
+		error_exit(E_REC, game);
 	close(fd);
 }
 

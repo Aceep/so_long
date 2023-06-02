@@ -58,7 +58,7 @@ int	loop_hook_start(t_game *start)
 	static int	i;
 	static int	end;
 
-	if (++i != 150)
+	if (++i != 1500)
 		return (0);
 	if (start->end == -3 && end == 0)
 		end = opening_door(start);

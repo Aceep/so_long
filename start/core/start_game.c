@@ -28,12 +28,6 @@ void	start_screen(t_game *start)
 		start->img.preview[2], 1000 / 2, 150);
 	mlx_put_image_to_window(start->ptr, start->win,
 		start->img.preview[3], 1000 / 2 + IMG_W, 150);
-	// while (x < 20)
-	// {
-	// 	mlx_put_image_to_window(start->ptr, start->win,
-	// 		start->img.preview[5], x * IMG_W, start->cursor.y);
-	// 	x ++;
-	// }
 	mlx_put_image_to_window(start->ptr, start->win,
 		start->img.cursor, start->cursor.x, start->cursor.y);
 }

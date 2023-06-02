@@ -15,17 +15,19 @@
 void	image_end(t_game *game)
 {
 	mlx_put_image_to_window(game->ptr,
-		game->win, game->img.end[7],
-		(game->width * IMG_W) / 2 - IMG_W,
-		game->height * IMG_H / 2 - 3 * IMG_H);
-	mlx_put_image_to_window(game->ptr,
 		game->win, game->img.end[game->choice],
 		(game->width * IMG_W) / 2 - IMG_W,
 		game->height * IMG_H / 2 - 96);
 	if (game->end == 1)
+	{
 		mlx_put_image_to_window(game->ptr, game->win, game->img.end[5],
 			(game->width * IMG_W) / 2 - IMG_W,
 			game->height * IMG_H / 4 * 3);
+		mlx_put_image_to_window(game->ptr,
+			game->win, game->img.end[7],
+			(game->width * IMG_W) / 2 - IMG_W,
+			game->height * IMG_H / 2 - 3 * IMG_H);
+	}
 	if (game->end == 2)
 		mlx_put_image_to_window(game->ptr, game->win, game->img.end[6],
 			(game->width * IMG_W) / 2 - IMG_W,

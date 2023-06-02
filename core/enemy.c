@@ -29,20 +29,17 @@ void	anime_ennemy(t_game *game, int x, int y)
 {
 	static int	fno;
 	static int	i;
-	static int	j;
 
 	mlx_put_image_to_window(game->ptr, game->win, game->img.ennemy[fno],
 		IMG_W * x, IMG_H * y);
-	if (i >= game->count.x && j == 1 * game->count.x)
+	if (i == game->count.x)
 	{
 		fno ++;
-		j = 0;
 		i = 0;
 	}
 	if (fno == 19)
 		fno = 0;
 	i ++;
-	j ++;
 }
 
 void	ft_playerlist(t_game *game)

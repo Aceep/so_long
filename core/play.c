@@ -81,14 +81,15 @@ int	key_hook(int key, t_game *game)
 int	loop_hook(t_game *game)
 {
 	static int	i;
+	static int	ret;
 
 	if (game->end > 0)
 	{
-		if (game->end == 2)
-			big_bang(game);
+		if (game->end == 2 && ret == 0)
+			ret = big_bang(game);
 		end_screen(game);
 	}
-	if ((++i % 1000) != 0)
+	if ((++i % 1500) != 0)
 		return (0);
 	if (game->end == 0)
 	{

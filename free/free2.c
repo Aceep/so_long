@@ -21,3 +21,12 @@ void	free_game(t_game *game)
 	free_map(game->map, game->height);
 	free(game);
 }
+
+void	free_gnl(int fd, char *line)
+{
+	while (line)
+	{
+		free(line);
+		line = get_next_line(fd);
+	}
+}

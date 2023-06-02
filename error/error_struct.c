@@ -40,7 +40,7 @@ void	error_exit(int error_type, t_game *game)
 	ft_printf("\033[1;31m%s\n\033[0m", errdesc[error_type].msg);
 	if (game)
 		free_game(game);
-	if (choice != 0)
+	if (g_choice != 0)
 		put_again("-1");
 	exit(EXIT_FAILURE);
 }
@@ -50,7 +50,7 @@ void	error_exit_charset(int error_type, t_game *game, char c)
 	ft_printf("\033[1;31m%s : %c\n\033[0m", errdesc[error_type].msg, c);
 	if (game)
 		free_game(game);
-	if (choice != 0)
+	if (g_choice != 0)
 		put_again("-1");
 	exit(EXIT_FAILURE);
 }
@@ -60,7 +60,7 @@ void	error_exit_count(int error_type, t_game *game, char *c)
 	ft_printf("\033[1;31m%s : %s\n\033[0m", errdesc[error_type].msg, c);
 	if (game)
 		free_game(game);
-	if (choice != 0)
+	if (g_choice != 0)
 		put_again("-1");
 	exit(EXIT_FAILURE);
 }

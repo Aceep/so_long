@@ -62,7 +62,6 @@ int	main(int ac, char **av)
 		start = ft_calloc(1, sizeof(t_game));
 		create_dico(start);
 		start_game(start, av[1]);
-		//start_screen(start);
 	}
 	return (0);
 }

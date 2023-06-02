@@ -14,10 +14,11 @@
 
 void	put_background(t_game *start)
 {
-	static int fno;
+	static int	fno;
 	static int	slw;
 
-	mlx_put_image_to_window(start->ptr, start->win, start->img.background[fno], 0, 0);
+	mlx_put_image_to_window(start->ptr, start->win,
+		start->img.background[fno], 0, 0);
 	if ((slw % 5) == 0)
 		fno ++;
 	slw ++;
@@ -54,10 +55,10 @@ void	choose_map(t_game *start, int c, int key)
 	fd = open("maps/list_map", O_RDONLY);
 	map = find_right_line(fd, i, map);
 	put_background(start);
-	if (map)
+	if (map && key == 0)
 		put_message(map, start);
-		// mlx_string_put(start->ptr, start->win,
-		// 	498 / 2, 150, 16711680, map);
+	if ((key == K_W || key == K_U || key == K_S || key == K_DO) && map)
+		put_message(map, start);
 	if (key == ENTER)
 		start->map_choice = ft_strdup(map);
 	while (map)

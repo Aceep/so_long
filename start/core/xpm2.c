@@ -85,5 +85,6 @@ void	xpm_background2(t_game *start)
 	start->img.background[32] = mlx_xpm_file_to_image(start->ptr, B33, &w, &h);
 	start->img.background[33] = mlx_xpm_file_to_image(start->ptr, B34, &w, &h);
 	start->img.background[34] = mlx_xpm_file_to_image(start->ptr, B35, &w, &h);
-	start->img.background[35] = mlx_xpm_file_to_image(start->ptr, LANDSCAPE, &w, &h);
+	start->img.background[35] = mlx_xpm_file_to_image(start->ptr,
+			LANDSCAPE, &w, &h);
 }

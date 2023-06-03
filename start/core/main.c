@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:56:15 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/06/01 11:41:59 by aceep            ###   ########.fr       */
+/*   Updated: 2023/06/03 12:08:13 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ int	start_game(t_game *start, char *again)
 		start->end = -2;
 	cursor_init(start);
 	all_xpm_for_start(start);
-	if (image_errors(start))
-		error_exit(E_IMG, start);
+	//if (image_errors(start) == 1)
+		//error_exit(E_IMG, start);
 	play_start(start);
 	ret = start->cursor.action;
 	return (ret);

@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:52:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/06/01 11:18:36 by aceep            ###   ########.fr       */
+/*   Updated: 2023/06/03 12:30:14 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,7 +132,7 @@
 # define A8 "graph/Alphabet/8.xpm"
 # define A9 "graph/Alphabet/9.xpm"
 
-# define IMG_NB_START 142
+# define IMG_NB_START 170
 
 typedef struct s_game	t_game;
 
@@ -160,7 +160,7 @@ void	start_screen(t_game *start);
 
 //Exit and Assignment
 int		exit_start(t_game *start);
-int    	image_errors(t_game  *game);
+int    	image_errors(t_game  *start);
 
 //Play Start Screen
 int		key_hook_start(int key, t_game *start);

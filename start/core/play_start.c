@@ -6,7 +6,7 @@
 /*   By: aceep <aceep@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:58:04 by alycgaut          #+#    #+#             */
-/*   Updated: 2023/06/01 10:19:15 by aceep            ###   ########.fr       */
+/*   Updated: 2023/06/03 12:39:24 by aceep            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	loop_hook_start(t_game *start)
 	static int	i;
 	static int	end;
 
-	if (++i != 1500)
+	if (++i != 150)
 		return (0);
 	if (start->end == -3 && end == 0)
 		end = opening_door(start);
